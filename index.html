@@ -10,13 +10,14 @@
             margin: 0;
             padding: 0;
             /* Gradient 7 sắc cầu vồng */
-            background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet);
+            background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet, red);
+            background-size: 400% 100%; /* Tăng kích thước gradient để tạo hiệu ứng chuyển động */
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100vh;
-            animation: rainbow 10s infinite; /* Hiệu ứng chuyển động */
+            animation: seaWaveRainbow 8s ease-in-out infinite; /* Hiệu ứng sóng */
         }
         .container {
             text-align: center;
@@ -38,8 +39,8 @@
         a:hover {
             text-decoration: underline;
         }
-        /* Animation cho gradient */
-        @keyframes rainbow {
+        /* Animation sóng biển với 7 sắc cầu vồng */
+        @keyframes seaWaveRainbow {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
@@ -48,9 +49,9 @@
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to My Website</h1>
-        <p>This is a simple website hosted on GitHub Pages.</p>
-        <p>Visit my <a href="https://github.com">GitHub profile</a> for more projects!</p>
+        <h1>Chào mừng tới website của ta các con giời</h1>
+        <p>Đây là WEB của tao hẹ hẹ hẹ</p>
+        <p>Truy cập <a href="https://github.com">GitHub profile của tao</a> for more projects!</p>
     </div>
 </body>
 </html>
