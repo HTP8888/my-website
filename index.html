@@ -9,7 +9,11 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
+            /* Thay nền bằng ảnh từ GitHub */
+            background-image: url('https://http8888.github.io/my-website/background.jpg');
+            background-size: cover; /* Ảnh phủ toàn màn hình */
+            background-repeat: no-repeat; /* Không lặp ảnh */
+            background-position: center; /* Căn giữa ảnh */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -18,7 +22,7 @@
         }
         .container {
             text-align: center;
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.8); /* Nền mờ để văn bản dễ đọc */
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
