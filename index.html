@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Web Bé Phong 8888</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: linear-gradient(90deg, #ffcccc, #ffe0b3, #ffffcc, #ccffcc, #cceeff, #e0ccff, #ffccf2);
+      background: linear-gradient(
+        90deg,
+        #ffcccc,
+        #ffe0b3,
+        #ffffcc,
+        #ccffcc,
+        #cceeff,
+        #e0ccff,
+        #ffccf2
+      );
       background-size: 400% 100%;
       animation: seaWaveRainbow 12s ease-in-out infinite;
       display: flex;
@@ -33,7 +42,9 @@
       color: #333;
     }
 
-    p, table, .funfact {
+    p,
+    table,
+    .funfact {
       color: #444;
       font-size: 16px;
     }
@@ -51,16 +62,26 @@
       width: 100%;
       margin-top: 20px;
       border-collapse: collapse;
+      background-color: rgba(255, 255, 255, 0.85);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
-    th, td {
+    th,
+    td {
       border: 1px solid #ccc;
       padding: 10px;
       font-size: 14px;
     }
 
     th {
-      background-color: #f0f0f0;
+      background-color: #e6f0ff;
+      color: #333;
+    }
+
+    td {
+      background-color: #ffffffcc;
     }
 
     .countdown {
@@ -75,9 +96,15 @@
     }
 
     @keyframes seaWaveRainbow {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
     }
   </style>
 </head>
@@ -85,8 +112,18 @@
   <div class="container">
     <h1>CHÀO MẤY CON LỢN NHỰA ĐÃ VÀO WEB CỦA TAO 🐷</h1>
     <p>ĐÂY LÀ TRANG WEB TAO LÀM BẰNG CẢ TÂM HUYẾT (THANH)🌈</p>
-    <p>LĂN VÀO NGAY <a href="https://github.com">PROFILE GITHUB CỦA TAO</a> ĐỂ COI THÊM PROJECT!</p>
-    <p>Click <a href="https://www.youtube.com/watch?v=7kO_ALcwNAw" target="_blank">ở đây</a> để nhận 50k từ Bé Phong 8888! 😄</p>
+    <p>
+      LĂN VÀO NGAY
+      <a href="https://github.com">PROFILE GITHUB CỦA TAO</a> ĐỂ COI THÊM
+      PROJECT!
+    </p>
+    <p>
+      Click
+      <a href="https://www.youtube.com/watch?v=7kO_ALcwNAw" target="_blank"
+        >ở đây</a
+      >
+      để nhận 50k từ Bé Phong 8888! 😄
+    </p>
 
     <h2>Lịch Thi Chính Thức 📅</h2>
     <table>
@@ -106,43 +143,123 @@
       </thead>
       <tbody>
         <tr>
-          <td>1</td><td>TEL1447</td><td>Điện toán đám mây</td><td>16</td><td>04/06/2025</td><td>10:00</td><td>120</td><td>501-A2</td><td>Tự luận</td><td class="countdown" data-date="2025-06-04T10:00:00"></td>
+          <td>1</td>
+          <td>TEL1447</td>
+          <td>Điện toán đám mây</td>
+          <td>16</td>
+          <td>04/06/2025</td>
+          <td>10:00</td>
+          <td>120</td>
+          <td>501-A2</td>
+          <td>Tự luận</td>
+          <td class="countdown" data-date="2025-06-04T10:00:00"></td>
         </tr>
         <tr>
-          <td>2</td><td>TEL1455</td><td>Quản trị mạng</td><td>17</td><td>07/06/2025</td><td>10:00</td><td>120</td><td>609-A3</td><td>Trắc nghiệm</td><td class="countdown" data-date="2025-06-07T10:00:00"></td>
+          <td>2</td>
+          <td>TEL1455</td>
+          <td>Quản trị mạng</td>
+          <td>17</td>
+          <td>07/06/2025</td>
+          <td>10:00</td>
+          <td>120</td>
+          <td>609-A3</td>
+          <td>Trắc nghiệm</td>
+          <td class="countdown" data-date="2025-06-07T10:00:00"></td>
         </tr>
         <tr>
-          <td>3</td><td>TEL1450</td><td>SDN & NFV</td><td>16</td><td>11/06/2025</td><td>15:30</td><td>120</td><td>303-A3</td><td>Tự luận</td><td class="countdown" data-date="2025-06-11T15:30:00"></td>
+          <td>3</td>
+          <td>TEL1450</td>
+          <td>SDN & NFV</td>
+          <td>16</td>
+          <td>11/06/2025</td>
+          <td>15:30</td>
+          <td>120</td>
+          <td>303-A3</td>
+          <td>Tự luận</td>
+          <td class="countdown" data-date="2025-06-11T15:30:00"></td>
         </tr>
         <tr>
-          <td>4</td><td>TEL1448</td><td>Lập trình Hướng Đối Tượng</td><td>19</td><td>14/06/2025</td><td>15:30</td><td>120</td><td>611-A3</td><td>Thực hành</td><td class="countdown" data-date="2025-06-14T15:30:00"></td>
+          <td>4</td>
+          <td>TEL1448</td>
+          <td>Lập trình Hướng Đối Tượng</td>
+          <td>19</td>
+          <td>14/06/2025</td>
+          <td>15:30</td>
+          <td>120</td>
+          <td>611-A3</td>
+          <td>Thực hành</td>
+          <td class="countdown" data-date="2025-06-14T15:30:00"></td>
         </tr>
         <tr>
-          <td>5</td><td>TEL1456</td><td>Mạng truyền thông vô tuyến</td><td>16</td><td>18/06/2025</td><td>15:30</td><td>120</td><td>507_2-A3</td><td>Trắc nghiệm</td><td class="countdown" data-date="2025-06-18T15:30:00"></td>
+          <td>5</td>
+          <td>TEL1456</td>
+          <td>Mạng truyền thông vô tuyến</td>
+          <td>16</td>
+          <td>18/06/2025</td>
+          <td>15:30</td>
+          <td>120</td>
+          <td>507_2-A3</td>
+          <td>Trắc nghiệm</td>
+          <td class="countdown" data-date="2025-06-18T15:30:00"></td>
         </tr>
         <tr>
-          <td>6</td><td>TEL1458</td><td>Mạng cảm biến không dây</td><td>17</td><td>21/06/2025</td><td>10:00</td><td>120</td><td>311-A3</td><td>Tự luận</td><td class="countdown" data-date="2025-06-21T10:00:00"></td>
+          <td>6</td>
+          <td>TEL1458</td>
+          <td>Mạng cảm biến không dây</td>
+          <td>17</td>
+          <td>21/06/2025</td>
+          <td>10:00</td>
+          <td>120</td>
+          <td>311-A3</td>
+          <td>Tự luận</td>
+          <td class="countdown" data-date="2025-06-21T10:00:00"></td>
         </tr>
         <tr>
-          <td>7</td><td>TEL1459</td><td>Thiết kế và hiệu năng mạng</td><td>25</td><td>26/06/2025</td><td>08:00</td><td>120</td><td>304-A2</td><td>Bài tập lớn</td><td class="countdown" data-date="2025-06-26T08:00:00"></td>
+          <td>7</td>
+          <td>TEL1459</td>
+          <td>Thiết kế và hiệu năng mạng</td>
+          <td>25</td>
+          <td>26/06/2025</td>
+          <td>08:00</td>
+          <td>120</td>
+          <td>304-A2</td>
+          <td>Bài tập lớn</td>
+          <td class="countdown" data-date="2025-06-26T08:00:00"></td>
         </tr>
         <tr>
-          <td>8</td><td>TEL1459</td><td>Thiết kế và hiệu năng mạng</td><td>25</td><td>28/06/2025</td><td>13:30</td><td>120</td><td>305-A2</td><td>Báo cáo</td><td class="countdown" data-date="2025-06-28T13:30:00"></td>
+          <td>8</td>
+          <td>TEL1459</td>
+          <td>Thiết kế và hiệu năng mạng</td>
+          <td>25</td>
+          <td>28/06/2025</td>
+          <td>13:30</td>
+          <td>120</td>
+          <td>305-A2</td>
+          <td>Báo cáo</td>
+          <td class="countdown" data-date="2025-06-28T13:30:00"></td>
         </tr>
       </tbody>
     </table>
 
-    <p class="funfact">🧠 Funfact: Thi xong môn "Thiết kế và hiệu năng mạng", bạn có thể tự thiết kế cả mạng... lưới tình yêu 💘.</p>
-    
+    <p class="funfact">
+      🧠 Funfact: Thi xong môn "Thiết kế và hiệu năng mạng", bạn có thể tự
+      thiết kế cả mạng... lưới tình yêu 💘.
+    </p>
+
     <p>
-      👉 <a href="https://github.com/HTP8888/my-website/raw/main/Lich%20Thi.ics" target="_blank">Tải lịch thi (.ics) để nhập vào Google Calendar</a>
+      👉
+      <a
+        href="https://github.com/HTP8888/my-website/raw/main/Lich%20Thi.ics"
+        target="_blank"
+        >Tải lịch ôn thi (.ics) để nhập vào Google Calendar</a
+      >
     </p>
   </div>
 
   <script>
     function updateCountdowns() {
       const now = new Date().getTime();
-      document.querySelectorAll('.countdown').forEach(el => {
+      document.querySelectorAll(".countdown").forEach((el) => {
         const examDate = new Date(el.dataset.date).getTime();
         const diff = examDate - now;
 
