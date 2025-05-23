@@ -4,259 +4,153 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Web Bé Phong 8888</title>
-  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
-      font-family: 'Comic Neue', 'Quicksand', cursive, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(
-        90deg,
-        #cc6666, /* Darkened from #ffcccc */
-        #cc9966, /* Darkened from #ffe0b3 */
-        #cccc66, /* Darkened from #ffffcc */
-        #66cc66, /* Darkened from #ccffcc */
-        #6699cc, /* Darkened from #cceeff */
-        #9966cc, /* Darkened from #e0ccff */
-        #cc6699  /* Darkened from #ffccf2 */
-      );
-      background-size: 400% 100%;
-      animation: seaWaveRainbow 12s ease-in-out infinite;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      font-family: 'Quicksand', 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #cc6666, #cc9966, #cccc66, #66cc66, #6699cc, #9966cc, #cc6699);
+      background-size: 400% 400%;
+      animation: gradientFlow 15s ease-in-out infinite;
       min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
     }
 
-    .container {
-      text-align: center;
-      background-color: rgba(255, 255, 255, 0.95);
-      padding: 30px;
-      border-radius: 16px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-      max-width: 900px;
-      width: 95%;
+    @keyframes gradientFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
-    h1 {
-      color: #333;
-      font-family: 'Quicksand', cursive, sans-serif;
-      font-weight: 700;
+    .glass-container {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 1.5rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
-    p,
-    table,
-    .funfact {
-      color: #444;
-      font-size: 16px;
+    .exam-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    a {
-      color: #0077cc;
-      text-decoration: none;
+    .exam-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
     }
 
-    a:hover {
-      text-decoration: underline;
+    .btn {
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
-    table {
-      width: 100%;
-      margin-top: 20px;
-      border-collapse: collapse;
-      background-color: rgba(255, 255, 255, 0.85);
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    th,
-    td {
-      border: 1px solid #ccc;
-      padding: 10px;
-      font-size: 14px;
-    }
-
-    th {
-      background-color: #e6f0ff;
-      color: #333;
-    }
-
-    td {
-      background-color: #ffffffcc;
-    }
-
-    .countdown {
-      font-weight: bold;
-      color: #d6336c;
-    }
-
-    .funfact {
-      margin-top: 20px;
-      font-style: italic;
-      color: #5a189a;
-    }
-
-    @keyframes seaWaveRainbow {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
+    .btn:hover {
+      transform: scale(1.05);
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>CHÀO MẤY CON LỢN NHỰA ĐÃ VÀO WEB CỦA TAO 🐷</h1>
-    <p>ĐÂY LÀ TRANG WEB TAO LÀM BẰNG CẢ TÂM HUYẾT!!!🌈</p>
-    <p>
-      LĂN VÀO NGAY
-      <a href="https://github.com/HTP8888">PROFILE GITHUB CỦA TAO</a> ĐỂ COI THÊM
-      PROJECT!
+  <div class="glass-container max-w-4xl w-full p-8 text-center">
+    <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">
+      CHÀO MẤY CON LỢN NHỰA ĐÃ VÀO WEB CỦA TAO 🐷
+    </h1>
+    <p class="text-lg md:text-xl text-white mb-6">
+      ĐÂY LÀ TRANG WEB TAO LÀM BẰNG CẢ TÂM HUYẾT!!! 🌈
     </p>
-    <p>
-      Click
-      <a href="https://www.youtube.com/watch?v=7kO_ALcwNAw" target="_blank"
-        >ở đây</a
-      >
-      để nhận 500K từ Bé Phong 8888!
+    <div class="flex flex-col md:flex-row gap-4 justify-center mb-8">
+      <a href="https://github.com/HTP8888" class="btn bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700">
+        Xem Profile GitHub Của Tao
+      </a>
+      <a href="https://www.youtube.com/watch?v=7kO_ALcwNAw" target="_blank" class="btn bg-pink-600 text-white px-6 py-3 rounded-full hover:bg-pink-700">
+        Nhận 500K Từ Bé Phong 8888!
+      </a>
+    </div>
+
+    <h2 class="text-2xl md:text-3xl font-semibold text-white mb-6">Lịch Thi Chính Thức 📅</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <!-- Exam Card 1 -->
+      <div class="exam-card bg-white bg-opacity-90 p-6 rounded-lg">
+        <h3 class="text-lg font-semibold text-gray-800">Điện toán đám mây</h3>
+        <p class="text-sm text-gray-600">Mã Môn: TEL1447 | Nhóm: 16</p>
+        <p class="text-sm text-gray-600">Ngày: 04/06/2025 | Giờ: 10:00</p>
+        <p class="text-sm text-gray-600">Thời gian: 120 phút | Phòng: 501-A2</p>
+        <p class="text-sm text-gray-600">Hình thức: Tự luận</p>
+        <p class="countdown font-bold text-pink-600" data-date="2025-06-04T10:00:00"></p>
+      </div>
+      <!-- Exam Card 2 -->
+      <div class="exam-card bg-white bg-opacity-90 p-6 rounded-lg">
+        <h3 class="text-lg font-semibold text-gray-800">Quản trị mạng</h3>
+        <p class="text-sm text-gray-600">Mã Môn: TEL1455 | Nhóm: 17</p>
+        <p class="text-sm text-gray-600">Ngày: 07/06/2025 | Giờ: 10:00</p>
+        <p class="text-sm text-gray-600">Thời gian: 120 phút | Phòng: 609-A3</p>
+        <p class="text-sm text-gray-600">Hình thức: Trắc nghiệm</p>
+        <p class="countdown font-bold text-pink-600" data-date="2025-06-07T10:00:00"></p>
+      </div>
+      <!-- Exam Card 3 -->
+      <div class="exam-card bg-white bg-opacity-90 p-6 rounded-lg">
+        <h3 class="text-lg font-semibold text-gray-800">SDN & NFV</h3>
+        <p class="text-sm text-gray-600">Mã Môn: TEL1450 | Nhóm: 16</p>
+        <p class="text-sm text-gray-600">Ngày: 11/06/2025 | Giờ: 15:30</p>
+        <p class="text-sm text-gray-600">Thời gian: 120 phút | Phòng: 303-A3</p>
+        <p class="text-sm text-gray-600">Hình thức: Tự luận</p>
+        <p class="countdown font-bold text-pink-600" data-date="2025-06-11T15:30:00"></p>
+      </div>
+      <!-- Exam Card 4 -->
+      <div class="exam-card bg-white bg-opacity-90 p-6 rounded-lg">
+        <h3 class="text-lg font-semibold text-gray-800">Lập trình Hướng Đối Tượng</h3>
+        <p class="text-sm text-gray-600">Mã Môn: TEL1448 | Nhóm: 19</p>
+        <p class="text-sm text-gray-600">Ngày: 14/06/2025 | Giờ: 15:30</p>
+        <p class="text-sm text-gray-600">Thời gian: 120 phút | Phòng: 611-A3</p>
+        <p class="text-sm text-gray-600">Hình thức: Thực hành</p>
+        <p class="countdown font-bold text-pink-600" data-date="2025-06-14T15:30:00"></p>
+      </div>
+      <!-- Exam Card 5 -->
+      <div class="exam-card bg-white bg-opacity-90 p-6 rounded-lg">
+        <h3 class="text-lg font-semibold text-gray-800">Mạng truyền thông vô tuyến</h3>
+        <p class="text-sm text-gray-600">Mã Môn: TEL1456 | Nhóm: 16</p>
+        <p class="text-sm text-gray-600">Ngày: 18/06/2025 | Giờ: 15:30</p>
+        <p class="text-sm text-gray-600">Thời gian: 120 phút | Phòng: 507_2-A3</p>
+        <p class="text-sm text-gray-600">Hình thức: Trắc nghiệm</p>
+        <p class="countdown font-bold text-pink-600" data-date="2025-06-18T15:30:00"></p>
+      </div>
+      <!-- Exam Card 6 -->
+      <div class="exam-card bg-white bg-opacity-90 p-6 rounded-lg">
+        <h3 class="text-lg font-semibold text-gray-800">Mạng cảm biến không dây</h3>
+        <p class="text-sm text-gray-600">Mã Môn: TEL1458 | Nhóm: 17</p>
+        <p class="text-sm text-gray-600">Ngày: 21/06/2025 | Giờ: 10:00</p>
+        <p class="text-sm text-gray-600">Thời gian: 120 phút | Phòng: 311-A3</p>
+        <p class="text-sm text-gray-600">Hình thức: Tự luận</p>
+        <p class="countdown font-bold text-pink-600" data-date="2025-06-21T10:00:00"></p>
+      </div>
+      <!-- Exam Card 7 -->
+      <div class="exam-card bg-white bg-opacity-90 p-6 rounded-lg">
+        <h3 class="text-lg font-semibold text-gray-800">Thiết kế và hiệu năng mạng</h3>
+        <p class="text-sm text-gray-600">Mã Môn: TEL1459 | Nhóm: 25</p>
+        <p class="text-sm text-gray-600">Ngày: 26/06/2025 | Giờ: 08:00</p>
+        <p class="text-sm text-gray-600">Thời gian: 120 phút | Phòng: 304-A2</p>
+        <p class="text-sm text-gray-600">Hình thức: Bài tập lớn</p>
+        <p class="countdown font-bold text-pink-600" data-date="2025-06-26T08:00:00"></p>
+      </div>
+      <!-- Exam Card 8 -->
+      <div class="exam-card bg-white bg-opacity-90 p-6 rounded-lg">
+        <h3 class="text-lg font-semibold text-gray-800">Thiết kế và hiệu năng mạng</h3>
+        <p class="text-sm text-gray-600">Mã Môn: TEL1459 | Nhóm: 25</p>
+        <p class="text-sm text-gray-600">Ngày: 28/06/2025 | Giờ: 13:30</p>
+        <p class="text-sm text-gray-600">Thời gian: 120 phút | Phòng: 305-A2</p>
+        <p class="text-sm text-gray-600">Hình thức: Báo cáo</p>
+        <p class="countdown font-bold text-pink-600" data-date="2025-06-28T13:30:00"></p>
+      </div>
+    </div>
+
+    <p class="funfact text-lg italic text-purple-300 mt-8">
+      🧠 Funfact: Thi xong môn "Thiết kế và hiệu năng mạng", bạn có thể tự thiết kế cả mạng... lưới tình yêu 💘.
     </p>
 
-    <h2>Lịch Thi Chính Thức 📅</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Mã Môn</th>
-          <th>Tên Môn</th>
-          <th>Nhóm</th>
-          <th>Ngày</th>
-          <th>Giờ</th>
-          <th>Thời gian (phút)</th>
-          <th>Phòng</th>
-          <th>Hình thức</th>
-          <th>Đếm ngược</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td>TEL1447</td>
-          <td>Điện toán đám mây</td>
-          <td>16</td>
-          <td>04/06/2025</td>
-          <td>10:00</td>
-          <td>120</td>
-          <td>501-A2</td>
-          <td>Tự luận</td>
-          <td class="countdown" data-date="2025-06-04T10:00:00"></td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>TEL1455</td>
-          <td>Quản trị mạng</td>
-          <td>17</td>
-          <td>07/06/2025</td>
-          <td>10:00</td>
-          <td>120</td>
-          <td>609-A3</td>
-          <td>Trắc nghiệm</td>
-          <td class="countdown" data-date="2025-06-07T10:00:00"></td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>TEL1450</td>
-          <td>SDN & NFV</td>
-          <td>16</td>
-          <td>11/06/2025</td>
-          <td>15:30</td>
-          <td>120</td>
-          <td>303-A3</td>
-          <td>Tự luận</td>
-          <td class="countdown" data-date="2025-06-11T15:30:00"></td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>TEL1448</td>
-          <td>Lập trình Hướng Đối Tượng</td>
-          <td>19</td>
-          <td>14/06/2025</td>
-          <td>15:30</td>
-          <td>120</td>
-          <td>611-A3</td>
-          <td>Thực hành</td>
-          <td class="countdown" data-date="2025-06-14T15:30:00"></td>
-        </tr>
-        <tr>
-          <td>5</td>
-          <td>TEL1456</td>
-          <td>Mạng truyền thông vô tuyến</td>
-          <td>16</td>
-          <td>18/06/2025</td>
-          <td>15:30</td>
-          <td>120</td>
-          <td>507_2-A3</td>
-          <td>Trắc nghiệm</td>
-          <td class="countdown" data-date="2025-06-18T15:30:00"></td>
-        </tr>
-        <tr>
-          <td>6</td>
-          <td>TEL1458</td>
-          <td>Mạng cảm biến không dây</td>
-          <td>17</td>
-          <td>21/06/2025</td>
-          <td>10:00</td>
-          <td>120</td>
-          <td>311-A3</td>
-          <td>Tự luận</td>
-          <td class="countdown" data-date="2025-06-21T10:00:00"></td>
-        </tr>
-        <tr>
-          <td>7</td>
-          <td>TEL1459</td>
-          <td>Thiết kế và hiệu năng mạng</td>
-          <td>25</td>
-          <td>26/06/2025</td>
-          <td>08:00</td>
-          <td>120</td>
-          <td>304-A2</td>
-          <td>Bài tập lớn</td>
-          <td class="countdown" data-date="2025-06-26T08:00:00"></td>
-        </tr>
-        <tr>
-          <td>8</td>
-          <td>TEL1459</td>
-          <td>Thiết kế và hiệu năng mạng</td>
-          <td>25</td>
-          <td>28/06/2025</td>
-          <td>13:30</td>
-          <td>120</td>
-          <td>305-A2</td>
-          <td>Báo cáo</td>
-          <td class="countdown" data-date="2025-06-28T13:30:00"></td>
-        </tr>
-      </tbody>
-    </table>
-
-    <p class="funfact">
-      🧠 Funfact: Thi xong môn "Thiết kế và hiệu năng mạng", bạn có thể tự
-      thiết kế cả mạng... lưới tình yêu 💘.
-    </p>
-
-    <p>
-      👉
-      <a
-        href="https://github.com/HTP8888/my-website/raw/main/Lich%20Thi.ics"
-        target="_blank"
-        >Tải lịch ôn thi (.ics) để nhập vào Google Calendar</a
-      >
-    </p>
+    <a href="https://github.com/HTP8888/my-website/raw/main/Lich%20Thi.ics" target="_blank" class="btn inline-block bg-green-600 text-white px-6 py-3 rounded-full mt-6 hover:bg-green-700">
+      👉 Tải lịch ôn thi (.ics) cho Google Calendar
+    </a>
   </div>
 
   <script>
@@ -277,8 +171,8 @@
       });
     }
 
-    setInterval(updateCountdowns, 60000); // cập nhật mỗi phút
-    updateCountdowns(); // cập nhật lần đầu
+    setInterval(updateCountdowns, 60000); // Cập nhật mỗi phút
+    updateCountdowns(); // Cập nhật lần đầu
   </script>
 </body>
 </html>
