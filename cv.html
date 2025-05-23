@@ -1,0 +1,173 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CV Bé Phong 8888</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Quicksand', 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #6b7280, #a5b4fc, #f9a8d4, #6ee7b7);
+      background-size: 400% 400%;
+      animation: gradientFlow 20s ease-in-out infinite;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+    }
+
+    @keyframes gradientFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .glass-container {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 1.5rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .section-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .section-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn {
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="glass-container max-w-4xl w-full p-8 text-center">
+    <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">
+      CV CỦA HOÀNG TRẦN PHONG 🐷
+    </h1>
+    <p class="text-lg md:text-xl text-white mb-6">
+      Thực tập sinh Network - CV siêu xịn mịn của tao, lăn vào xem ngay! 🌈
+    </p>
+    <a href="index.html" class="btn inline-block bg-blue-500 text-white px-6 py-3 rounded-full mb-8 hover:bg-blue-600">
+      Quay lại Trang Chính
+    </a>
+
+    <div class="space-y-6">
+      <!-- Thông tin cá nhân -->
+      <div class="section-card bg-white bg-opacity-90 p-6 rounded-lg">
+        <h2 class="text-2xl font-semibold text-gray-800">Thông Tin Cá Nhân</h2>
+        <p class="text-gray-600">Họ và Tên: Hoàng Trần Phong</p>
+        <p class="text-gray-600">Email: <a href="mailto:htp20038888@gmail.com" class="text-blue-500 hover:underline">htp20038888@gmail.com</a></p>
+        <p class="text-gray-600">Điện thoại: 0964399721</p>
+        <p class="text-gray-600">GitHub: <a href="https://github.com/HTP8888" class="text-blue-500 hover:underline">HTP8888</a></p>
+        <p class="text-gray-600">Địa chỉ: Hà Đông, Hà Nội</p>
+      </div>
+
+      <!-- Học vấn -->
+      <div class="section-card bg-white bg-opacity-90 p-6 rounded-lg">
+        <h2 class="text-2xl font-semibold text-gray-800">Học Vấn</h2>
+        <p class="text-gray-600">Học viện Công nghệ Bưu chính Viễn thông</p>
+        <p class="text-gray-600">Ngành: Điện tử Viễn thông</p>
+        <p class="text-gray-600">Thời gian: 2021 - 2026</p>
+        <p class="text-gray-600">GPA: 2.8</p>
+      </div>
+
+      <!-- Danh hiệu và Giải thưởng -->
+      <div class="section-card bg-white bg-opacity-90 p-6 rounded-lg">
+        <h2 class="text-2xl font-semibold text-gray-800">Danh Hiệu và Giải Thưởng</h2>
+        <p class="text-gray-600">11/2022: Học bổng Doanh nghiệp DTS</p>
+      </div>
+
+      <!-- Chứng chỉ -->
+      <div class="section-card bg-white bg-opacity-90 p-6 rounded-lg">
+        <h2 class="text-2xl font-semibold text-gray-800">Chứng Chỉ</h2>
+        <p class="text-gray-600">08/2024: TOEIC (675)</p>
+        <p class="text-gray-600">11/2024: 21st Century Technologies (Ericsson)</p>
+      </div>
+
+      <!-- Kỹ năng -->
+      <div class="section-card bg-white bg-opacity-90 p-6 rounded-lg">
+        <h2 class="text-2xl font-semibold text-gray-800">Kỹ Năng</h2>
+        <p class="text-gray-600 font-semibold">Kỹ năng chuyên môn:</p>
+        <ul class="text-gray-600 list-disc list-inside">
+          <li>Hiểu biết và cấu hình mạng máy tính: TCP/IP, Routing, Switching, VLAN, VPN, Wireless</li>
+          <li>Giám sát, phân tích mạng: Zabbix, Wireshark</li>
+          <li>Quản trị hệ thống: Windows Server, Linux, Ảo hóa (VMware, Hyper-V)</li>
+          <li>Sử dụng dịch vụ Cloud: OneDrive, SDN (OpenFlow)</li>
+        </ul>
+        <p class="text-gray-600 font-semibold mt-4">Kỹ năng mềm:</p>
+        <ul class="text-gray-600 list-disc list-inside">
+          <li>Tư duy logic phân tích sự cố mạng</li>
+          <li>Làm việc nhóm</li>
+          <li>Chủ động học hỏi về Cloud Networking, 5G</li>
+        </ul>
+      </div>
+
+      <!-- Hoạt động -->
+      <div class="section-card bg-white bg-opacity-90 p-6 rounded-lg">
+        <h2 class="text-2xl font-semibold text-gray-800">Hoạt Động</h2>
+        <p class="text-gray-600 font-semibold">08/2024 - 11/2024: Đồ án môn "Internet và Giao thức"</p>
+        <p class="text-gray-600">Nhóm trưởng</p>
+        <p class="text-gray-600">Bắt các bản tin VoIP giữa 2 máy ảo Windows sử dụng server Linux trung gian và phân tích qua Wireshark.</p>
+        <p class="text-gray-600 font-semibold mt-4">02/2024 - 04/2024: Đồ án môn "SDN & NFV"</p>
+        <p class="text-gray-600">Thành viên nhóm</p>
+        <p class="text-gray-600">Thiết kế dự án "Quản lý hệ thống mạng trường đại học bằng SDN".</p>
+      </div>
+    </div>
+
+    <a href="https://github.com/HTP8888/my-website/raw/main/CV_TTS_Network_Hoang_Tran_Phong.pdf" target="_blank" class="btn inline-block bg-green-500 text-white px-6 py-3 rounded-full mt-6 hover:bg-green-600">
+      👉 Tải CV (PDF)
+    </a>
+  </div>
+</body>
+</html>
