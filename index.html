@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>HTP8888 · Portfolio</title>
-  <meta name="description" content="Portfolio của Hoàng Trần Phong (HTP8888) — XGS-PON/FTTx, Zabbix, pfSense, EVE-NG, Java, C++, Python." />
+  <title>Hoàng Trần Phong · HTP8888 — Portfolio</title>
+  <meta name="description" content="Portfolio song ngữ Anh–Việt của Hoàng Trần Phong (HTP8888) — Zabbix, Grafana, pfSense, EVE‑NG, XGS‑PON/OLT, C++/Java/Python." />
   <meta property="og:title" content="HTP8888 · Portfolio" />
-  <meta property="og:description" content="Dự án, kỹ năng, kinh nghiệm và liên hệ." />
+  <meta property="og:description" content="System monitoring & FTTx — Zabbix, Grafana, XGS‑PON/OLT." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="/assets/cover.png" />
   <link rel="icon" href="/assets/favicon.ico" />
@@ -21,11 +21,11 @@
             display: ['Inter', 'ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif'],
           },
           boxShadow: {
-            soft: '0 12px 40px -18px rgba(0,0,0,0.35)'
+            soft: '0 14px 44px -18px rgba(0,0,0,0.35)'
           },
           colors: {
-            brand: {
-              50: '#ecfeff', 100: '#cffafe', 200: '#a5f3fc', 300: '#67e8f9', 400: '#22d3ee', 500: '#06b6d4', 600: '#0891b2', 700: '#0e7490', 800: '#155e75', 900: '#164e63'
+            chelsea: {
+              50:'#e7f0ff',100:'#c9dcff',200:'#9dbdff',300:'#6c99ff',400:'#3d75f6',500:'#1d57d9',600:'#0f46b5',700:'#0b3a96',800:'#08307d',900:'#072a6c',950:'#051e4f'
             }
           }
         }
@@ -33,67 +33,288 @@
     }
   </script>
   <style>
-    .gradient-text {background: linear-gradient(90deg,#06b6d4,#22c55e,#a855f7,#06b6d4);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:flow 10s ease infinite}
+    .gradient-text {background: linear-gradient(90deg,#1d57d9,#3d75f6,#1d57d9);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:flow 10s ease infinite}
     @keyframes flow{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+    .brand-border{border-color: rgba(7,42,108,0.15)}
   </style>
 </head>
-<body class="font-display bg-white text-slate-800 dark:bg-slate-950 dark:text-slate-100">
-  <!-- Hero -->
+<body class="font-display bg-white text-slate-800">
+  <!-- Top bar with language toggle -->
+  <header class="sticky top-0 z-50 backdrop-blur bg-white/85 border-b brand-border">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+      <a href="#home" class="font-extrabold tracking-tight text-chelsea-700">HTP8888</a>
+      <nav class="hidden md:flex gap-6 text-sm">
+        <a href="#about" class="hover:text-chelsea-600">About</a>
+        <a href="#skills" class="hover:text-chelsea-600">Skills</a>
+        <a href="#experience" class="hover:text-chelsea-600">Experience</a>
+        <a href="#projects" class="hover:text-chelsea-600">Projects</a>
+        <a href="#contact" class="hover:text-chelsea-600">Contact</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <button id="langVi" class="px-3 py-1 rounded-xl border brand-border text-sm">VI</button>
+        <button id="langEn" class="px-3 py-1 rounded-xl border brand-border text-sm">EN</button>
+        <button class="md:hidden p-2 rounded-xl border brand-border" id="menuBtn" aria-label="Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden border-t brand-border">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex flex-col gap-2 text-sm">
+        <a href="#about" class="py-1">About</a>
+        <a href="#skills" class="py-1">Skills</a>
+        <a href="#experience" class="py-1">Experience</a>
+        <a href="#projects" class="py-1">Projects</a>
+        <a href="#contact" class="py-1">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
   <section id="home" class="relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="absolute -top-24 -right-40 w-[40rem] h-[40rem] bg-gradient-to-tr from-chelsea-300/30 via-chelsea-500/20 to-chelsea-300/30 blur-3xl rounded-full"></div>
+    </div>
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24 grid md:grid-cols-2 gap-10 items-center">
       <div>
-        <p class="text-sm uppercase tracking-widest text-slate-500 dark:text-slate-400">Xin chào, tôi là</p>
-        <h1 class="mt-2 text-3xl sm:text-5xl font-black leading-tight"><span class="gradient-text">Hoàng Trần Phong</span></h1>
-        <p class="mt-3 text-base sm:text-lg text-slate-600 dark:text-slate-300">Sinh viên chuyên ngành Mạng & Dịch vụ Internet. Quan tâm XGS-PON/FTTx, Zabbix, pfSense, EVE-NG, và lập trình bằng C++, Java, Python.</p>
+        <p class="text-sm uppercase tracking-widest text-slate-500" data-i18n="hero.tag">Portfolio · System Monitoring & FTTx</p>
+        <h1 class="mt-2 text-3xl sm:text-5xl font-black leading-tight"><span class="gradient-text" data-i18n="hero.name">Hoàng Trần Phong (HTP8888)</span></h1>
+        <p class="mt-3 text-base sm:text-lg text-slate-600" data-i18n="hero.desc">
+          Sinh viên PTIT, yêu thích quản trị hệ thống (Zabbix, Grafana) và nghiên cứu XGS‑PON/FTTx. Đồ án: "Nghiên cứu công nghệ XGS‑PON và giải pháp triển khai trên thiết bị OLT".
+        </p>
         <div class="mt-6 flex flex-wrap gap-3">
-          <a href="https://github.com/HTP8888?tab=repositories" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-2xl px-4 py-2 bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-soft">Xem Projects</a>
-          <a href="https://raw.githubusercontent.com/HTP8888/my-website/main/CV_TTS_Network_Hoang_Tran_Phong.pdf" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-2xl px-4 py-2 border border-slate-300 dark:border-slate-700">📄 Tải CV (PDF)</a>
+          <a href="https://github.com/HTP8888?tab=repositories" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-2xl px-4 py-2 bg-chelsea-700 text-white shadow-soft" data-i18n="hero.projects">Xem Projects</a>
+          <a href="https://raw.githubusercontent.com/HTP8888/my-website/main/CV_TTS_Network_Hoang_Tran_Phong.pdf" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-2xl px-4 py-2 border brand-border" data-i18n="hero.cv">📄 Tải CV (PDF)</a>
         </div>
-        <div class="mt-6 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
-          <span class="px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-800">C++</span>
-          <span class="px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-800">Java</span>
-          <span class="px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-800">Python</span>
-          <span class="px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-800">REST API</span>
+        <div class="mt-6 flex flex-wrap gap-2 text-xs text-slate-700">
+          <span class="px-2 py-1 rounded-full bg-slate-100">Zabbix</span>
+          <span class="px-2 py-1 rounded-full bg-slate-100">Grafana</span>
+          <span class="px-2 py-1 rounded-full bg-slate-100">pfSense</span>
+          <span class="px-2 py-1 rounded-full bg-slate-100">EVE‑NG</span>
+          <span class="px-2 py-1 rounded-full bg-slate-100">XGS‑PON/OLT</span>
+          <span class="px-2 py-1 rounded-full bg-slate-100">C++ / Java / Python</span>
         </div>
       </div>
       <div class="relative">
-        <div class="aspect-square rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-soft bg-gradient-to-br from-slate-100 to-white dark:from-slate-900 dark:to-slate-950 flex items-center justify-center">
+        <div class="aspect-square rounded-3xl overflow-hidden border brand-border shadow-soft bg-gradient-to-br from-slate-100 to-white flex items-center justify-center">
           <img src="/assets/avatar.png" alt="HTP8888" class="w-48 h-48 rounded-2xl object-cover" />
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="py-16 sm:py-24 bg-slate-50 dark:bg-slate-900/30">
+  <!-- ABOUT -->
+  <section id="about" class="py-16 sm:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-8 items-start">
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-chelsea-800" data-i18n="about.title">Giới thiệu</h2>
+        <p class="mt-4 text-slate-700" data-i18n="about.body">
+          Mình tập trung vào giám sát hệ thống và mạng: xây dựng dashboard trực quan bằng Grafana trên dữ liệu Zabbix, thiết kế cảnh báo, và tự động hoá bằng script. Bên cạnh đó, mình nghiên cứu XGS‑PON/FTTx với mô hình OLT/ONU/ONT và triển khai lab cấu hình, IP/VLAN, giám sát qua SNMP.
+        </p>
+        <ul class="mt-4 grid grid-cols-2 gap-2 text-sm">
+          <li class="rounded-xl border brand-border p-3" data-i18n="about.loc">Hà Nội, Việt Nam</li>
+          <li class="rounded-xl border brand-border p-3" data-i18n="about.school">PTIT — Mạng & Dịch vụ Internet</li>
+          <li class="rounded-xl border brand-border p-3" data-i18n="about.status">Open to Internship</li>
+          <li class="rounded-xl border brand-border p-3">Chelsea FC Fan 💙</li>
+        </ul>
+      </div>
+      <div class="rounded-3xl border brand-border p-6">
+        <h3 class="font-semibold text-chelsea-700" data-i18n="about.focus">Hướng quan tâm</h3>
+        <ul class="mt-3 space-y-2 text-sm list-disc list-inside">
+          <li data-i18n="about.li1">Giám sát hệ thống: Zabbix Agent2, SNMP/Trap, LLD, alerting.</li>
+          <li data-i18n="about.li2">Grafana: dashboard hoá số liệu, annotation sự kiện.</li>
+          <li data-i18n="about.li3">pfSense VPN/NAT, log & rule; EVE‑NG lab multi‑vendor.</li>
+          <li data-i18n="about.li4">XGS‑PON/OLT: chuẩn ITU‑T G.9807.1, coexist GPON.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="py-16 sm:py-24">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <h2 class="text-2xl sm:text-3xl font-bold">Liên hệ</h2>
+      <h2 class="text-2xl sm:text-3xl font-bold text-chelsea-800" data-i18n="skills.title">Kỹ năng</h2>
+      <div class="mt-6 grid md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="font-semibold mb-3 text-chelsea-700" data-i18n="skills.prog">Lập trình</h3>
+          <div class="space-y-4">
+            <div>
+              <div class="flex justify-between text-sm"><span>C++</span><span>85%</span></div>
+              <div class="h-2 bg-slate-200 rounded-full overflow-hidden"><div class="h-2 bg-chelsea-600 w-[85%]"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm"><span>Java</span><span>80%</span></div>
+              <div class="h-2 bg-slate-200 rounded-full overflow-hidden"><div class="h-2 bg-chelsea-600 w-[80%]"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm"><span>Python</span><span>75%</span></div>
+              <div class="h-2 bg-slate-200 rounded-full overflow-hidden"><div class="h-2 bg-chelsea-600 w-[75%]"></div></div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-semibold mb-3 text-chelsea-700" data-i18n="skills.infra">Hạ tầng & Công cụ</h3>
+          <div class="space-y-4">
+            <div>
+              <div class="flex justify-between text-sm"><span>Zabbix</span><span>85%</span></div>
+              <div class="h-2 bg-slate-200 rounded-full overflow-hidden"><div class="h-2 bg-chelsea-600 w-[85%]"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm"><span>Grafana</span><span>80%</span></div>
+              <div class="h-2 bg-slate-200 rounded-full overflow-hidden"><div class="h-2 bg-chelsea-600 w-[80%]"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm"><span>pfSense / EVE‑NG</span><span>78%</span></div>
+              <div class="h-2 bg-slate-200 rounded-full overflow-hidden"><div class="h-2 bg-chelsea-600 w-[78%]"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="py-16 sm:py-24 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <h2 class="text-2xl sm:text-3xl font-bold text-chelsea-800" data-i18n="exp.title">Kinh nghiệm & Học tập</h2>
       <div class="mt-6 grid md:grid-cols-2 gap-6">
-        <div class="rounded-3xl border border-slate-200 dark:border-slate-800 p-6">
-          <p class="text-sm">Trao đổi về lab, hợp tác nghiên cứu hay cơ hội thực tập:</p>
+        <article class="rounded-3xl border brand-border p-6 bg-white">
+          <h3 class="font-semibold text-chelsea-700" data-i18n="exp.role1">System Monitoring Labs</h3>
+          <p class="text-sm text-slate-500">2024–2025 · Hà Nội</p>
+          <ul class="mt-3 space-y-2 text-sm list-disc list-inside">
+            <li data-i18n="exp.r1">Thiết kế alert rule Zabbix (trigger, escalation, media types).</li>
+            <li data-i18n="exp.r2">Dashboard Grafana cho CPU/Memory/NetFlow; annotation sự kiện.</li>
+            <li data-i18n="exp.r3">SNMP/Trap OLT/ONU/pfSense; LLD và bản đồ mạng.</li>
+          </ul>
+        </article>
+        <article class="rounded-3xl border brand-border p-6 bg-white">
+          <h3 class="font-semibold text-chelsea-700" data-i18n="exp.role2">PTIT — Electronics & Telecom</h3>
+          <p class="text-sm text-slate-500">2021–2025</p>
+          <p class="mt-2 text-sm" data-i18n="exp.body2">Đồ án chuyên ngành: XGS‑PON & triển khai trên thiết bị OLT (thiết kế VLAN/IP, coexist GPON, giám sát SNMP).</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="py-16 sm:py-24">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex items-end justify-between gap-4">
+        <h2 class="text-2xl sm:text-3xl font-bold text-chelsea-800" data-i18n="proj.title">Dự án nổi bật</h2>
+        <a href="https://github.com/HTP8888?tab=repositories" target="_blank" class="text-sm underline">GitHub →</a>
+      </div>
+      <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="group rounded-3xl border brand-border bg-white overflow-hidden hover:-translate-y-1 transition shadow-soft">
+          <img src="/assets/projects/zabbix.jpg" alt="Zabbix & Grafana" class="h-40 w-full object-cover"/>
+          <div class="p-5">
+            <h3 class="font-semibold text-lg">Zabbix + Grafana Stack</h3>
+            <p class="mt-2 text-sm text-slate-600" data-i18n="proj.p1">Tích hợp datasource, dashboard hệ thống, alert webhook.</p>
+            <div class="mt-4 flex gap-3 text-sm"><a href="#" class="underline">README</a></div>
+          </div>
+        </article>
+        <article class="group rounded-3xl border brand-border bg-white overflow-hidden hover:-translate-y-1 transition shadow-soft">
+          <img src="/assets/projects/xgspn.jpg" alt="XGS-PON Lab" class="h-40 w-full object-cover"/>
+          <div class="p-5">
+            <h3 class="font-semibold text-lg">XGS‑PON on OLT</h3>
+            <p class="mt-2 text-sm text-slate-600" data-i18n="proj.p2">Mô hình OLT/ONU/ONT, VLAN/IP, coexist với GPON theo ITU‑T.</p>
+            <div class="mt-4 flex gap-3 text-sm"><a href="#" class="underline">Docs</a></div>
+          </div>
+        </article>
+        <article class="group rounded-3xl border brand-border bg-white overflow-hidden hover:-translate-y-1 transition shadow-soft">
+          <img src="/assets/projects/pfsense.jpg" alt="pfSense VPN" class="h-40 w-full object-cover"/>
+          <div class="p-5">
+            <h3 class="font-semibold text-lg">pfSense VPN & NAT</h3>
+            <p class="mt-2 text-sm text-slate-600" data-i18n="proj.p3">OpenVPN/SSL VPN, NAT 1:1/Port‑forward, rule & log.</p>
+            <div class="mt-4 flex gap-3 text-sm"><a href="#" class="underline">How‑to</a></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-16 sm:py-24 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <h2 class="text-2xl sm:text-3xl font-bold text-chelsea-800" data-i18n="contact.title">Liên hệ</h2>
+      <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <div class="rounded-3xl border brand-border p-6 bg-white">
+          <p class="text-sm" data-i18n="contact.blurb">Trao đổi về lab, hợp tác nghiên cứu hay cơ hội thực tập:</p>
           <ul class="mt-3 space-y-2 text-sm">
             <li>Email: <a class="underline" href="mailto:phonght.b21vt339@stu.ptit.edu.vn">phonght.b21vt339@stu.ptit.edu.vn</a></li>
             <li>GitHub: <a class="underline" href="https://github.com/HTP8888" target="_blank" rel="noreferrer">@HTP8888</a></li>
-            <li>Địa điểm: Hà Nội, Việt Nam</li>
+            <li>Location: Hà Nội, Việt Nam</li>
           </ul>
         </div>
-        <form class="rounded-3xl border border-slate-200 dark:border-slate-800 p-6" action="https://formspree.io/f/xblzbggk" method="POST">
-          <label class="block text-sm">Họ & Tên<input required name="name" class="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-transparent p-2" /></label>
-          <label class="block text-sm mt-3">Email<input required type="email" name="email" class="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-transparent p-2" /></label>
-          <label class="block text-sm mt-3">Nội dung<textarea required name="message" rows="4" class="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-transparent p-2"></textarea></label>
-          <button class="mt-4 inline-flex items-center gap-2 rounded-2xl px-4 py-2 bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-soft">Gửi</button>
-          <p class="mt-2 text-xs text-slate-500">Tin nhắn sẽ gửi trực tiếp đến email của bạn qua Formspree.</p>
+        <form class="rounded-3xl border brand-border p-6 bg-white" action="https://formspree.io/f/xblzbggk" method="POST" id="contactForm">
+          <label class="block text-sm">Họ & Tên<input required name="name" class="mt-1 w-full rounded-xl border brand-border bg-transparent p-2" /></label>
+          <label class="block text-sm mt-3">Email<input required type="email" name="email" class="mt-1 w-full rounded-xl border brand-border bg-transparent p-2" /></label>
+          <label class="block text-sm mt-3">Nội dung<textarea required name="message" rows="4" class="mt-1 w-full rounded-xl border brand-border bg-transparent p-2"></textarea></label>
+          <button class="mt-4 inline-flex items-center gap-2 rounded-2xl px-4 py-2 bg-chelsea-700 text-white shadow-soft" id="sendBtn">Gửi</button>
+          <p class="mt-2 text-xs text-slate-500" id="formNote">Tin nhắn sẽ gửi trực tiếp qua Formspree.</p>
+          <div id="toast" class="hidden mt-3 text-sm rounded-xl px-3 py-2"></div>
         </form>
       </div>
     </div>
   </section>
 
-  <footer class="py-8 border-t border-slate-200 dark:border-slate-800 text-center text-sm">
-    <p>© <span id="year"></span> HTP8888 · Made with TailwindCSS</p>
+  <footer class="py-8 border-t brand-border text-center text-sm bg-white">
+    <p>© <span id="year"></span> HTP8888 · Chelsea blue theme 💙</p>
   </footer>
 
+  <!-- Language pack & small JS -->
   <script>
+    const strings = {
+      en: {
+        'hero.tag':'Portfolio · System Monitoring & FTTx',
+        'hero.name':'Hoang Tran Phong (HTP8888)',
+        'hero.desc':'PTIT student passionate about system administration (Zabbix, Grafana) and XGS‑PON/FTTx research. Thesis: "Research on XGS‑PON and deployment solutions on OLT."',
+        'hero.projects':'View Projects',
+        'hero.cv':'📄 Download CV (PDF)',
+        'about.title':'About',
+        'about.body':'I focus on system & network monitoring: building Grafana dashboards on Zabbix data, designing alerting, and automating with scripts. In parallel, I research XGS‑PON/FTTx with OLT/ONU/ONT models, IP/VLAN planning, and SNMP monitoring.',
+        'about.loc':'Hanoi, Vietnam',
+        'about.school':'PTIT — Internet Networks & Services',
+        'about.status':'Open to Internship',
+        'about.focus':'Focus',
+        'about.li1':'System monitoring: Zabbix Agent2, SNMP/Trap, LLD, alerting.',
+        'about.li2':'Grafana: data visualization, dashboarding, annotations.',
+        'about.li3':'pfSense VPN/NAT, logs & rules; EVE‑NG multi‑vendor labs.',
+        'about.li4':'XGS‑PON/OLT: ITU‑T G.9807.1, GPON coexistence.',
+        'skills.title':'Skills', 'skills.prog':'Programming', 'skills.infra':'Infra & Tools',
+        'exp.title':'Experience & Education', 'exp.role1':'System Monitoring Labs', 'exp.role2':'PTIT — Electronics & Telecom', 'exp.body2':'Capstone: XGS‑PON & OLT deployment (VLAN/IP, GPON coexistence, SNMP monitoring).',
+        'proj.title':'Featured Projects', 'proj.p1':'Integrate datasource, system dashboards, alert webhooks.', 'proj.p2':'OLT/ONU/ONT topology, VLAN/IP, GPON coexistence (ITU‑T).', 'proj.p3':'OpenVPN/SSL VPN, NAT 1:1/Port‑forward, rules & logs.',
+        'contact.title':'Contact', 'contact.blurb':'Let’s talk about labs, research collaboration, or internship opportunities.'
+      },
+      vi: {}
+    };
+
+    // Fill VI by reading current DOM text (already in VI). When switching EN, we swap to strings.en
+    const tEls = document.querySelectorAll('[data-i18n]');
+    function setLang(lang){
+      if(lang==='en'){
+        tEls.forEach(el=>{ const k=el.getAttribute('data-i18n'); if(strings.en[k]) el.textContent=strings.en[k]; });
+        document.documentElement.lang='en';
+      } else {
+        // reload VI text by refreshing from initial content via location hash trick
+        location.hash = '#vi'; location.reload();
+      }
+    }
+    document.getElementById('langEn').addEventListener('click',()=>setLang('en'));
+    document.getElementById('langVi').addEventListener('click',()=>setLang('vi'));
+
+    // Mobile menu
+    document.getElementById('menuBtn').addEventListener('click',()=>document.getElementById('mobileMenu').classList.toggle('hidden'));
+
+    // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Simple toast after submit (client-side)
+    const form = document.getElementById('contactForm');
+    const toast = document.getElementById('toast');
+    form?.addEventListener('submit', ()=>{
+      toast.className='mt-3 text-sm rounded-xl px-3 py-2 bg-chelsea-700 text-white';
+      toast.textContent='Đã gửi! Cảm ơn bạn đã liên hệ.';
+      setTimeout(()=>{ toast.className='hidden'; }, 6000);
+    });
   </script>
 </body>
 </html>
