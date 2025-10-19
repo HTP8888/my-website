@@ -4,29 +4,27 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Hoàng Trần Phong · HTP8888 — Portfolio</title>
-  <meta name="description" content="Portfolio song ngữ Anh–Việt của Hoàng Trần Phong (HTP8888) — Zabbix, Grafana, pfSense, EVE‑NG, XGS‑PON/OLT, C++/Java/Python." />
+  <meta name="description" content="Portfolio song ngữ Anh–Việt của Hoàng Trần Phong (HTP8888) — Zabbix, Grafana, EVE-NG, XGS-PON/OLT, C++/Java/Python." />
   <meta property="og:title" content="HTP8888 · Portfolio" />
-  <meta property="og:description" content="System monitoring & FTTx — Zabbix, Grafana, XGS‑PON/OLT." />
+  <meta property="og:description" content="System monitoring & FTTx — Zabbix, Grafana, XGS-PON/OLT." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="/assets/cover.png" />
   <link rel="icon" href="/assets/favicon.ico" />
 
-  <!-- Prevent initial flash: read saved theme early -->
+  <!-- Anti-flash theme -->
   <script>
-    (function() {
+    (function () {
       try {
-        var mode = localStorage.getItem('theme') || 'system';
-        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        if (mode === 'dark' || (mode === 'system' && prefersDark)) {
+        const saved = localStorage.getItem('theme') || 'system';
+        const prefersDark = matchMedia('(prefers-color-scheme: dark)').matches;
+        if (saved === 'dark' || (saved === 'system' && prefersDark)) {
           document.documentElement.classList.add('dark');
-        } else {
-          document.documentElement.classList.remove('dark');
         }
-      } catch(_) {}
+      } catch(e) {}
     })();
   </script>
 
-  <!-- Tailwind CDN -->
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -34,56 +32,63 @@
       theme: {
         extend: {
           fontFamily: {
-            display: ['Inter', 'ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif'],
+            display: ['Inter','ui-sans-serif','system-ui','Segoe UI','Roboto','Helvetica Neue','Arial','Noto Sans','sans-serif'],
           },
-          boxShadow: {
-            soft: '0 14px 44px -18px rgba(0,0,0,0.35)'
-          },
+          boxShadow: { soft: '0 14px 44px -18px rgba(0,0,0,.35)' },
           colors: {
-            chelsea: {
-              50:'#e7f0ff',100:'#c9dcff',200:'#9dbdff',300:'#6c99ff',400:'#3d75f6',500:'#1d57d9',600:'#0f46b5',700:'#0b3a96',800:'#08307d',900:'#072a6c',950:'#051e4f'
-            }
+            chelsea:{50:'#e7f0ff',100:'#c9dcff',200:'#9dbdff',300:'#6c99ff',400:'#3d75f6',500:'#1d57d9',600:'#0f46b5',700:'#0b3a96',800:'#08307d',900:'#072a6c',950:'#051e4f'}
           }
         }
       }
     }
   </script>
   <style>
-    .gradient-text {background: linear-gradient(90deg,#1d57d9,#3d75f6,#1d57d9);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:flow 10s ease infinite}
+    .gradient-text{background:linear-gradient(90deg,#1d57d9,#3d75f6,#1d57d9);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:flow 10s ease infinite}
     @keyframes flow{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-    .brand-border{border-color: rgba(7,42,108,0.15)}
-    /* Dark overrides */
-    .dark body { background-color:#0b1220; color:#e5e7eb; }
-    .dark .brand-border{ border-color: rgba(255,255,255,0.12) }
-    .dark .bg-white{ background-color:#111827 !important; }
-    .dark .bg-slate-50{ background-color:#0b1220 !important; }
-    .dark .text-slate-800{ color:#e5e7eb !important; }
-    .dark .text-slate-700{ color:#cbd5e1 !important; }
-    .dark .text-slate-600{ color:#94a3b8 !important; }
-    .dark .shadow-soft{ box-shadow: 0 14px 44px -18px rgba(0,0,0,0.8) }
-    .segmented .opt{ border-radius: 9999px; padding: .375rem .75rem; border:1px solid rgba(7,42,108,.15); }
-    .dark .segmented .opt{ border-color: rgba(255,255,255,.15); }
-    .segmented .opt.active{ background:#0b3a96; color:white; }
+    .brand-border{border-color:rgba(7,42,108,.15)}
+    /* DARK: tăng tương phản */
+    .dark body{background:#0b1220;color:#e8edf5}
+    .dark .brand-border{border-color:rgba(255,255,255,.12)}
+    .dark .bg-white{background:#0f172a!important}
+    .dark .bg-slate-50{background:#0b1220!important}
+    .dark .text-slate-800{color:#eef2f7!important}
+    .dark .text-slate-700{color:#d7dde7!important}
+    .dark .text-slate-600{color:#b8c1d1!important}
+    .dark .shadow-soft{box-shadow:0 16px 48px -18px rgba(0,0,0,.85)}
+    .chip{background:#f1f5f9}
+    .dark .chip{background:#0f1b31;color:#dbe6ff;border:1px solid rgba(255,255,255,.08)}
+    /* Switches (theme 3 nấc + lang 2 nấc) */
+    .switch{position:relative;display:inline-grid;gap:0;width:max-content;border-radius:9999px;padding:.25rem;border:1px solid rgba(7,42,108,.15)}
+    .switch-3{grid-template-columns:repeat(3,auto)}
+    .switch-2{grid-template-columns:repeat(2,auto)}
+    .switch button{position:relative;z-index:2;padding:.375rem .75rem;border-radius:9999px;font-size:.8rem}
+    .switch .thumb{position:absolute;inset:.25rem auto .25rem 0;width:33.333%;border-radius:9999px;background:#0b3a96;transition:transform .25s ease,width .25s ease}
+    .switch-2 .thumb{width:50%}
+    .dark .switch{border-color:rgba(255,255,255,.15)}
+    .switch[data-pos="0"] .thumb{transform:translateX(0)}
+    .switch[data-pos="1"] .thumb{transform:translateX(100%)}
+    .switch.switch-3[data-pos="2"] .thumb{transform:translateX(200%)}
+    .switch .label{position:relative;z-index:3}
+    .switch .active{color:#fff}
   </style>
 </head>
 <body class="font-display bg-white text-slate-800 transition-colors duration-300">
-  <!-- Inline SVG Icons (same as before) -->
+
+  <!-- Icons (rút gọn) -->
   <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
     <symbol id="icon-zabbix" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="4" ry="4" fill="#D40000"/><path d="M6 16l5-8h-5v-2h10l-5 8h5v2H6z" fill="#fff"/></symbol>
     <symbol id="icon-grafana" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" fill="#FF9800"/><path d="M12 2l2 3-2 1-2-1 2-3zm8 10l-3 2-1-2 1-2 3 2zm-8 8l-2-3 2-1 2 1-2 3zM4 12l3-2 1 2-1 2-3-2z" fill="#F57C00"/></symbol>
-    <symbol id="icon-pfsense" viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5.25-3.5 9.75-8 11-4.5-1.25-8-5.75-8-11V5l8-3z" fill="#1D57D9"/><path d="M8 11h8v2H8zM8 14h5v2H8z" fill="#fff"/></symbol>
     <symbol id="icon-eve" viewBox="0 0 24 24"><circle cx="6" cy="12" r="3" fill="#0B3A96"/><circle cx="18" cy="6" r="3" fill="#0B3A96"/><circle cx="18" cy="18" r="3" fill="#0B3A96"/><path d="M8.5 10.5l7-3M8.5 13.5l7 3" stroke="#0B3A96" stroke-width="2" fill="none"/></symbol>
     <symbol id="icon-olt" viewBox="0 0 24 24"><path d="M3 12h10" stroke="#072A6C" stroke-width="2"/><circle cx="16" cy="12" r="3" fill="#072A6C"/><path d="M19 12h2m-1-3v6" stroke="#072A6C" stroke-width="2"/></symbol>
     <symbol id="icon-cpp" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#00599C"/><path d="M10 8a4 4 0 100 8 4 4 0 100-8z" fill="#fff"/><path d="M14 9h2v2h-2V9zm0 4h2v2h-2v-2z" fill="#fff"/></symbol>
     <symbol id="icon-java" viewBox="0 0 24 24"><path d="M6 17h9a3 3 0 100-6H6v6z" fill="#1D57D9"/><path d="M15 11h2a2 2 0 110 4h-2" fill="none" stroke="#1D57D9" stroke-width="2"/><path d="M5 20h12" stroke="#1D57D9" stroke-width="2"/></symbol>
     <symbol id="icon-python" viewBox="0 0 24 24"><path d="M12 3c3 0 3 2 3 4v2H9c-2 0-4 2-4 4V9c0-3 2-6 7-6z" fill="#3776AB"/><path d="M12 21c-3 0-3-2-3-4v-2h6c2 0 4-2 4-4v4c0 3-2 6-7 6z" fill="#FFD43B"/></symbol>
-    <symbol id="icon-linux" viewBox="0 0 24 24"><path d="M12 3c2 0 3 2 3 3v2c2 1 3 3 3 5 0 4-3 6-6 6s-6-2-6-6c0-2 1-4 3-5V6c0-1 1-3 3-3z" fill="#000"/><circle cx="10" cy="8" r="1" fill="#fff"/><circle cx="14" cy="8" r="1" fill="#fff"/></symbol>
-    <symbol id="icon-git" viewBox="0 0 24 24"><path d="M7 5a2 2 0 110 4 2 2 0 010-4zm0 10a2 2 0 110 4 2 2 0 010-4zm10-5a2 2 0 110 4 2 2 0 010-4z" fill="#F34F29"/><path d="M7 7v6m0 0c4 0 6-2 10-2" stroke="#F34F29" stroke-width="2"/></symbol>
-    <symbol id="icon-sql" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="7" ry="3" fill="#08307D"/><path d="M5 5v10c0 1.7 3.1 3 7 3s7-1.3 7-3V5" fill="#08307D" opacity="0.8"/></symbol>
+    <symbol id="icon-sql" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="7" ry="3" fill="#08307D"/><path d="M5 5v10c0 1.7 3.1 3 7 3s7-1.3 7-3V5" fill="#08307D" opacity=".8"/></symbol>
     <symbol id="icon-wireshark" viewBox="0 0 24 24"><path d="M3 19c4-10 14-14 18-14-5 3-9 8-9 14H3z" fill="#1679A7"/></symbol>
+    <symbol id="icon-git" viewBox="0 0 24 24"><path d="M7 5a2 2 0 110 4 2 2 0 010-4zm0 10a2 2 0 110 4 2 2 0 010-4zm10-5a2 2 0 110 4 2 2 0 010-4z" fill="#F34F29"/><path d="M7 7v6m0 0c4 0 6-2 10-2" stroke="#F34F29" stroke-width="2"/></symbol>
   </svg>
 
-  <!-- Top bar with language + theme segmented control -->
+  <!-- Header -->
   <header class="sticky top-0 z-50 backdrop-blur bg-white/85 dark:bg-slate-900/70 border-b brand-border transition-colors">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
       <a href="#home" class="font-extrabold tracking-tight text-chelsea-700">HTP8888</a>
@@ -94,148 +99,343 @@
         <a href="#projects" class="hover:text-chelsea-600" data-i18n="nav.projects">Dự án</a>
         <a href="#contact" class="hover:text-chelsea-600" data-i18n="nav.contact">Liên hệ</a>
       </nav>
-      <div class="flex items-center gap-2">
-        <!-- Theme segmented control -->
-        <div class="segmented hidden sm:flex items-center gap-2 mr-2">
-          <button id="themeSystem" class="opt text-sm" title="Theo hệ điều hành">HĐH</button>
-          <button id="themeLight"  class="opt text-sm" title="Chế độ sáng">Sáng</button>
-          <button id="themeDark"   class="opt text-sm" title="Chế độ tối">Tối</button>
+      <div class="flex items-center gap-3">
+        <!-- Theme 3 nấc -->
+        <div id="themeSwitch" class="switch switch-3 select-none" role="tablist" aria-label="Theme" data-pos="0">
+          <span class="thumb"></span>
+          <button class="label" data-mode="system">HĐH</button>
+          <button class="label" data-mode="light">Sáng</button>
+          <button class="label" data-mode="dark">Tối</button>
         </div>
-        <!-- Language -->
-        <button id="langVi" class="px-3 py-1 rounded-xl border brand-border text-sm">VI</button>
-        <button id="langEn" class="px-3 py-1 rounded-xl border brand-border text-sm">EN</button>
+        <!-- Lang 2 nấc -->
+        <div id="langSwitch" class="switch switch-2 select-none" role="tablist" aria-label="Language" data-pos="0">
+          <span class="thumb"></span>
+          <button class="label" data-lang="vi">VI</button>
+          <button class="label" data-lang="en">EN</button>
+        </div>
         <button class="md:hidden p-2 rounded-xl border brand-border" id="menuBtn" aria-label="Menu">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
         </button>
       </div>
     </div>
     <div id="mobileMenu" class="md:hidden hidden border-t brand-border">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex flex-col gap-2 text-sm">
-        <div class="segmented flex items-center gap-2">
-          <button id="mThemeSystem" class="opt text-sm">HĐH</button>
-          <button id="mThemeLight"  class="opt text-sm">Sáng</button>
-          <button id="mThemeDark"   class="opt text-sm">Tối</button>
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex flex-col gap-3 text-sm">
+        <div id="mThemeSwitch" class="switch switch-3" data-pos="0"><span class="thumb"></span>
+          <button class="label" data-mode="system">HĐH</button><button class="label" data-mode="light">Sáng</button><button class="label" data-mode="dark">Tối</button>
         </div>
-        <div class="flex gap-2 mt-2">
-          <button id="mLangVi" class="px-3 py-1 rounded-xl border brand-border text-sm">VI</button>
-          <button id="mLangEn" class="px-3 py-1 rounded-xl border brand-border text-sm">EN</button>
+        <div id="mLangSwitch" class="switch switch-2" data-pos="0"><span class="thumb"></span>
+          <button class="label" data-lang="vi">VI</button><button class="label" data-lang="en">EN</button>
         </div>
-        <a href="#about" class="py-1" data-i18n="nav.about">Giới thiệu</a>
-        <a href="#skills" class="py-1" data-i18n="nav.skills">Kỹ năng</a>
-        <a href="#experience" class="py-1" data-i18n="nav.experience">Kinh nghiệm</a>
-        <a href="#projects" class="py-1" data-i18n="nav.projects">Dự án</a>
-        <a href="#contact" class="py-1" data-i18n="nav.contact">Liên hệ</a>
+        <a href="#about" data-i18n="nav.about">Giới thiệu</a>
+        <a href="#skills" data-i18n="nav.skills">Kỹ năng</a>
+        <a href="#experience" data-i18n="nav.experience">Kinh nghiệm</a>
+        <a href="#projects" data-i18n="nav.projects">Dự án</a>
+        <a href="#contact" data-i18n="nav.contact">Liên hệ</a>
       </div>
     </div>
   </header>
 
-  <!-- HERO (unchanged content trimmed for brevity in this generator) -->
+  <!-- HERO -->
   <section id="home" class="relative overflow-hidden">
     <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
-      <div class="absolute -top-24 -right-40 w-[40rem] h-[40rem] bg-gradient-to-tr from-chelsea-300/30 via-chelsea-500/20 to-chelsea-300/30 blur-3xl rounded-full"></div>
+      <div class="absolute -top-24 -right-40 w-[40rem] h-[40rem] bg-gradient-to-tr from-chelsea-300/25 via-chelsea-500/15 to-chelsea-300/25 blur-3xl rounded-full"></div>
     </div>
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24 grid md:grid-cols-2 gap-10 items-center">
       <div>
         <p class="text-sm uppercase tracking-widest text-slate-500" data-i18n="hero.tag">Portfolio · System Monitoring & FTTx</p>
         <h1 class="mt-2 text-3xl sm:text-5xl font-black leading-tight"><span class="gradient-text" data-i18n="hero.name">Hoàng Trần Phong (HTP8888)</span></h1>
-        <p class="mt-3 text-base sm:text-lg text-slate-600" data-i18n="hero.desc">
-          Sinh viên PTIT, yêu thích quản trị hệ thống (Zabbix, Grafana) và nghiên cứu XGS‑PON/FTTx. Đồ án: "Nghiên cứu công nghệ XGS‑PON và giải pháp triển khai trên thiết bị OLT".
+        <p class="mt-3 text-base sm:text-lg text-slate-700 dark:text-slate-300" data-i18n="hero.desc">
+          Sinh viên PTIT, yêu thích quản trị hệ thống (Zabbix, Grafana) và nghiên cứu XGS-PON/FTTx. Đồ án: "Nghiên cứu công nghệ XGS-PON và giải pháp triển khai trên thiết bị OLT".
         </p>
         <div class="mt-6 flex flex-wrap gap-3">
           <a href="https://github.com/HTP8888?tab=repositories" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-2xl px-4 py-2 bg-chelsea-700 text-white shadow-soft" data-i18n="hero.projects">Xem Projects</a>
-          <a href="https://raw.githubusercontent.com/HTP8888/my-website/main/CV_TTS_Network_Hoang_Tran_Phong.pdf" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-2xl px-4 py-2 border brand-border" data-i18n="hero.cv">📄 Tải CV (PDF)</a>
+          <a href="https://raw.githubusercontent.com/HTP8888/my-website/main/CV_TTS_Network_Hoang_Tran_Phong.pdf" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-2xl px-4 py-2 border brand-border dark:border-white/10 dark:text-slate-100" data-i18n="hero.cv">📄 Tải CV (PDF)</a>
         </div>
-        <div class="mt-6 flex flex-wrap gap-2 text-xs text-slate-700">
-          <span class="px-2 py-1 rounded-full bg-slate-100">Zabbix</span>
-          <span class="px-2 py-1 rounded-full bg-slate-100">Grafana</span>
-          <span class="px-2 py-1 rounded-full bg-slate-100">pfSense</span>
-          <span class="px-2 py-1 rounded-full bg-slate-100">EVE‑NG</span>
-          <span class="px-2 py-1 rounded-full bg-slate-100">XGS‑PON/OLT</span>
-          <span class="px-2 py-1 rounded-full bg-slate-100">C++ / Java / Python</span>
+        <div class="mt-6 flex flex-wrap gap-2 text-xs">
+          <span class="chip px-2 py-1 rounded-full">Zabbix</span>
+          <span class="chip px-2 py-1 rounded-full">Grafana</span>
+          <span class="chip px-2 py-1 rounded-full">EVE-NG</span>
+          <span class="chip px-2 py-1 rounded-full">XGS-PON/OLT</span>
+          <span class="chip px-2 py-1 rounded-full">C++ / Java / Python</span>
         </div>
       </div>
       <div class="relative">
-        <div class="aspect-square rounded-3xl overflow-hidden border brand-border shadow-soft bg-gradient-to-br from-slate-100 to-white flex items-center justify-center dark:from-slate-800 dark:to-slate-900">
+        <div class="aspect-square rounded-3xl overflow-hidden border brand-border shadow-soft bg-gradient-to-br from-slate-100 to-white dark:from-[#0e1627] dark:to-[#0b1220] flex items-center justify-center">
           <img src="https://github.com/HTP8888/my-website/blob/main/avatar.jpg?raw=true" alt="Hoàng Trần Phong" class="w-64 h-64 rounded-full object-cover shadow-soft ring-4 ring-chelsea-600 transition-transform duration-300 hover:scale-105" />
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT, SKILLS, EXPERIENCE, PROJECTS, CONTACT: content same as your current file -->
-  <!-- For brevity in this generator, please paste the rest of your sections unchanged below if needed. -->
-  <!-- … BUT in real update we should keep the exact content; the dark mode styles affect globally via CSS above. -->
+  <!-- ABOUT -->
+  <section id="about" class="py-16 sm:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-8 items-start">
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-chelsea-800" data-i18n="about.title">Giới thiệu</h2>
+        <p class="mt-4 text-slate-700 dark:text-slate-300" data-i18n="about.body">
+          Mình tập trung vào giám sát hệ thống và mạng: xây dựng dashboard trực quan bằng Grafana trên dữ liệu Zabbix, thiết kế cảnh báo, và tự động hoá bằng script. Bên cạnh đó, mình nghiên cứu XGS-PON/FTTx với mô hình OLT/ONU/ONT và triển khai lab cấu hình, IP/VLAN, giám sát qua SNMP.
+        </p>
+        <ul class="mt-4 grid grid-cols-2 gap-2 text-sm">
+          <li class="rounded-xl border brand-border p-3 dark:text-slate-200" data-i18n="about.loc">Hà Nội, Việt Nam</li>
+          <li class="rounded-xl border brand-border p-3 dark:text-slate-200" data-i18n="about.school">PTIT — Mạng & Dịch vụ Internet</li>
+          <li class="rounded-xl border brand-border p-3 dark:text-slate-200" data-i18n="about.status">Sẵn sàng thực tập</li>
+          <li class="rounded-xl border brand-border p-3 dark:text-slate-200">Chelsea FC Fan 💙</li>
+        </ul>
+      </div>
+      <div class="rounded-3xl border brand-border p-6">
+        <h3 class="font-semibold text-chelsea-700 dark:text-chelsea-200" data-i18n="about.focus">Hướng quan tâm</h3>
+        <ul class="mt-3 space-y-2 text-sm list-disc list-inside dark:text-slate-300">
+          <li data-i18n="about.li1">Giám sát hệ thống: Zabbix Agent2, SNMP/Trap, LLD, alerting.</li>
+          <li data-i18n="about.li2">Grafana: trực quan hóa dữ liệu, dashboard, annotation.</li>
+          <li data-i18n="about.li3">EVE-NG multi-vendor; Wireshark phân tích gói tin.</li>
+          <li data-i18n="about.li4">XGS-PON/OLT: ITU-T G.9807.1, coexist GPON.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="py-16 sm:py-24">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <h2 class="text-2xl sm:text-3xl font-bold text-chelsea-800" data-i18n="skills.title">Kỹ năng</h2>
+
+      <!-- Monitoring & Tools -->
+      <div class="mt-8">
+        <h3 class="text-sm font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-300" data-i18n="skills.monitor">Monitoring & Tools</h3>
+        <div class="mt-4 space-y-4">
+          <!-- Item template -->
+          <div class="flex items-center gap-4 rounded-2xl border brand-border bg-white p-4">
+            <svg class="h-6 w-6"><use href="#icon-zabbix"/></svg><span class="min-w-24 text-sm font-medium">Zabbix</span>
+            <div class="flex-1 h-2 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden"><div class="bar h-full bg-chelsea-600 rounded-full" data-value="0.9"></div></div>
+          </div>
+          <div class="flex items-center gap-4 rounded-2xl border brand-border bg-white p-4">
+            <svg class="h-6 w-6"><use href="#icon-grafana"/></svg><span class="min-w-24 text-sm font-medium">Grafana</span>
+            <div class="flex-1 h-2 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden"><div class="bar h-full bg-chelsea-600 rounded-full" data-value="0.85"></div></div>
+          </div>
+          <div class="flex items-center gap-4 rounded-2xl border brand-border bg-white p-4">
+            <svg class="h-6 w-6"><use href="#icon-eve"/></svg><span class="min-w-24 text-sm font-medium">EVE-NG</span>
+            <div class="flex-1 h-2 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden"><div class="bar h-full bg-chelsea-600 rounded-full" data-value="0.78"></div></div>
+          </div>
+          <div class="flex items-center gap-4 rounded-2xl border brand-border bg-white p-4">
+            <svg class="h-6 w-6"><use href="#icon-olt"/></svg><span class="min-w-24 text-sm font-medium">XGS-PON / OLT</span>
+            <div class="flex-1 h-2 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden"><div class="bar h-full bg-chelsea-600 rounded-full" data-value="0.82"></div></div>
+          </div>
+          <div class="flex items-center gap-4 rounded-2xl border brand-border bg-white p-4">
+            <svg class="h-6 w-6"><use href="#icon-wireshark"/></svg><span class="min-w-24 text-sm font-medium">Wireshark</span>
+            <div class="flex-1 h-2 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden"><div class="bar h-full bg-chelsea-600 rounded-full" data-value="0.75"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Programming -->
+      <div class="mt-10">
+        <h3 class="text-sm font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-300" data-i18n="skills.programming">Lập trình</h3>
+        <div class="mt-4 space-y-4">
+          <div class="flex items-center gap-4 rounded-2xl border brand-border bg-white p-4">
+            <svg class="h-6 w-6"><use href="#icon-cpp"/></svg><span class="min-w-24 text-sm font-medium">C++</span>
+            <div class="flex-1 h-2 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden"><div class="bar h-full bg-chelsea-600 rounded-full" data-value="0.85"></div></div>
+          </div>
+          <div class="flex items-center gap-4 rounded-2xl border brand-border bg-white p-4">
+            <svg class="h-6 w-6"><use href="#icon-java"/></svg><span class="min-w-24 text-sm font-medium">Java</span>
+            <div class="flex-1 h-2 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden"><div class="bar h-full bg-chelsea-600 rounded-full" data-value="0.80"></div></div>
+          </div>
+          <div class="flex items-center gap-4 rounded-2xl border brand-border bg-white p-4">
+            <svg class="h-6 w-6"><use href="#icon-python"/></svg><span class="min-w-24 text-sm font-medium">Python</span>
+            <div class="flex-1 h-2 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden"><div class="bar h-full bg-chelsea-600 rounded-full" data-value="0.76"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Database -->
+      <div class="mt-10">
+        <h3 class="text-sm font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-300" data-i18n="skills.database">Cơ sở dữ liệu</h3>
+        <div class="mt-4 space-y-4">
+          <div class="flex items-center gap-4 rounded-2xl border brand-border bg-white p-4">
+            <svg class="h-6 w-6"><use href="#icon-sql"/></svg><span class="min-w-24 text-sm font-medium">MySQL</span>
+            <div class="flex-1 h-2 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden"><div class="bar h-full bg-chelsea-600 rounded-full" data-value="0.78"></div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="py-16 sm:py-24 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <h2 class="text-2xl sm:text-3xl font-bold text-chelsea-800" data-i18n="exp.title">Kinh nghiệm & Học tập</h2>
+      <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <article class="rounded-3xl border brand-border p-6 bg-white">
+          <h3 class="font-semibold text-chelsea-700 dark:text-chelsea-200" data-i18n="exp.role1">System Monitoring Labs</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300">2024–2025 · Hà Nội</p>
+          <ul class="mt-3 space-y-2 text-sm list-disc list-inside dark:text-slate-300">
+            <li>Thiết kế alert rule Zabbix (trigger, escalation, media types).</li>
+            <li>Dashboard Grafana CPU/Memory/NetFlow; annotation sự kiện.</li>
+            <li>SNMP/Trap OLT/ONU; LLD và bản đồ mạng.</li>
+          </ul>
+        </article>
+        <article class="rounded-3xl border brand-border p-6 bg-white">
+          <h3 class="font-semibold text-chelsea-700 dark:text-chelsea-200" data-i18n="exp.role2">PTIT — Electronics & Telecom</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300">2021–2025</p>
+          <p class="mt-2 text-sm dark:text-slate-300" data-i18n="exp.body2">Đồ án: XGS-PON & triển khai OLT (VLAN/IP, coexist GPON, giám sát SNMP).</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="py-16 sm:py-24">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex items-end justify-between gap-4">
+        <h2 class="text-2xl sm:text-3xl font-bold text-chelsea-800" data-i18n="proj.title">Dự án nổi bật</h2>
+        <a href="https://github.com/HTP8888?tab=repositories" target="_blank" class="text-sm underline">GitHub →</a>
+      </div>
+      <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="group rounded-3xl border brand-border bg-white overflow-hidden hover:-translate-y-1 transition shadow-soft">
+          <img src="/assets/projects/zabbix.jpg" alt="Zabbix & Grafana" class="h-40 w-full object-cover"/>
+          <div class="p-5">
+            <h3 class="font-semibold text-lg">Zabbix + Grafana Stack</h3>
+            <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Tích hợp datasource, dashboard hệ thống, alert webhook.</p>
+            <div class="mt-4 flex gap-3 text-sm"><a href="#" class="underline">README</a></div>
+          </div>
+        </article>
+        <article class="group rounded-3xl border brand-border bg-white overflow-hidden hover:-translate-y-1 transition shadow-soft">
+          <img src="/assets/projects/xgspn.jpg" alt="XGS-PON Lab" class="h-40 w-full object-cover"/>
+          <div class="p-5">
+            <h3 class="font-semibold text-lg">XGS-PON on OLT</h3>
+            <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Mô hình OLT/ONU/ONT, VLAN/IP, coexist GPON (ITU-T).</p>
+            <div class="mt-4 flex gap-3 text-sm"><a href="#" class="underline">Docs</a></div>
+          </div>
+        </article>
+        <article class="group rounded-3xl border brand-border bg-white overflow-hidden hover:-translate-y-1 transition shadow-soft">
+          <img src="/assets/projects/pfsense.jpg" alt="pfSense VPN" class="h-40 w-full object-cover"/>
+          <div class="p-5">
+            <h3 class="font-semibold text-lg">pfSense VPN & NAT</h3>
+            <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">OpenVPN/SSL VPN, NAT 1:1/Port-forward, rules & logs.</p>
+            <div class="mt-4 flex gap-3 text-sm"><a href="#" class="underline">How-to</a></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-16 sm:py-24 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <h2 class="text-2xl sm:text-3xl font-bold text-chelsea-800" data-i18n="contact.title">Liên hệ</h2>
+      <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <div class="rounded-3xl border brand-border p-6 bg-white">
+          <p class="text-sm dark:text-slate-300" data-i18n="contact.blurb">Trao đổi về lab, hợp tác nghiên cứu hay cơ hội thực tập:</p>
+          <ul class="mt-3 space-y-2 text-sm dark:text-slate-300">
+            <li>Email: <a class="underline" href="mailto:phonght.b21vt339@stu.ptit.edu.vn">phonght.b21vt339@stu.ptit.edu.vn</a></li>
+            <li>GitHub: <a class="underline" href="https://github.com/HTP8888" target="_blank" rel="noreferrer">@HTP8888</a></li>
+            <li>Location: Hà Nội, Việt Nam</li>
+          </ul>
+        </div>
+        <form class="rounded-3xl border brand-border p-6 bg-white" action="https://formspree.io/f/xblzbggk" method="POST" id="contactForm">
+          <label class="block text-sm">Họ & Tên<input required name="name" class="mt-1 w-full rounded-xl border brand-border bg-transparent p-2" /></label>
+          <label class="block text-sm mt-3">Email<input required type="email" name="email" class="mt-1 w-full rounded-xl border brand-border bg-transparent p-2" /></label>
+          <label class="block text-sm mt-3">Nội dung<textarea required name="message" rows="4" class="mt-1 w-full rounded-xl border brand-border bg-transparent p-2"></textarea></label>
+          <button class="mt-4 inline-flex items-center gap-2 rounded-2xl px-4 py-2 bg-chelsea-700 text-white shadow-soft" id="sendBtn">Gửi</button>
+          <p class="mt-2 text-xs text-slate-500 dark:text-slate-400" id="formNote">Tin nhắn sẽ gửi trực tiếp qua Formspree.</p>
+          <div id="toast" class="hidden mt-3 text-sm rounded-xl px-3 py-2"></div>
+        </form>
+      </div>
+    </div>
+  </section>
 
   <footer class="py-8 border-t brand-border text-center text-sm bg-white dark:bg-slate-900">
     <p>© <span id="year"></span> HTP8888 · Chelsea blue theme 💙</p>
   </footer>
 
-  <!-- Language pack & theme logic -->
+  <!-- i18n + logic -->
   <script>
-    // Theme -------------------------------------------------
-    const themeButtons = [document.getElementById('themeSystem'), document.getElementById('themeLight'), document.getElementById('themeDark')]
-      .filter(Boolean);
-    const mThemeButtons = [document.getElementById('mThemeSystem'), document.getElementById('mThemeLight'), document.getElementById('mThemeDark')]
-      .filter(Boolean);
-
-    const mq = window.matchMedia('(prefers-color-scheme: dark)');
-    function applyTheme(mode) {
-      localStorage.setItem('theme', mode);
-      reflectTheme();
-    }
-    function reflectTheme() {
-      const mode = localStorage.getItem('theme') || 'system';
-      const prefersDark = mq.matches;
-      const isDark = (mode === 'dark') || (mode === 'system' && prefersDark);
+    // === THEME (3 nấc) ===
+    const mq = matchMedia('(prefers-color-scheme: dark)');
+    function setTheme(mode){ localStorage.setItem('theme', mode); applyTheme(); }
+    function applyTheme(){
+      const mode = localStorage.getItem('theme')||'system';
+      const isDark = (mode==='dark') || (mode==='system' && mq.matches);
       document.documentElement.classList.toggle('dark', isDark);
-      // active UI
-      [...themeButtons, ...mThemeButtons].forEach(btn=>btn && btn.classList.remove('active'));
-      const pick = mode === 'dark' ? '#themeDark' : mode === 'light' ? '#themeLight' : '#themeSystem';
-      const mpick = mode === 'dark' ? '#mThemeDark' : mode === 'light' ? '#mThemeLight' : '#mThemeSystem';
-      const el = document.querySelector(pick); if(el) el.classList.add('active');
-      const mel = document.querySelector(mpick); if(mel) mel.classList.add('active');
+      // update switch ui
+      const map = {system:0, light:1, dark:2};
+      document.querySelectorAll('#themeSwitch, #mThemeSwitch').forEach(sw=>{
+        if(!sw) return;
+        sw.dataset.pos = map[mode];
+        [...sw.querySelectorAll('button')].forEach((b,i)=>b.classList.toggle('active', i===map[mode]));
+      });
     }
-    themeButtons.forEach((btn)=>btn.addEventListener('click',()=>applyTheme(btn.id === 'themeDark' ? 'dark' : btn.id === 'themeLight' ? 'light' : 'system')));
-    mThemeButtons.forEach((btn)=>btn.addEventListener('click',()=>applyTheme(btn.id === 'mThemeDark' ? 'dark' : btn.id === 'mThemeLight' ? 'light' : 'system')));
-    mq.addEventListener && mq.addEventListener('change', ()=>{ if((localStorage.getItem('theme')||'system')==='system'){ reflectTheme(); } });
-    reflectTheme();
+    function initThemeSwitch(id){
+      const sw = document.getElementById(id); if(!sw) return;
+      sw.addEventListener('click', e=>{
+        const btn = e.target.closest('button'); if(!btn) return;
+        setTheme(btn.dataset.mode);
+      });
+      // dragless: click anywhere to cycle (optional)
+      sw.addEventListener('dblclick', ()=>{
+        const cur = localStorage.getItem('theme')||'system';
+        const order = ['system','light','dark'];
+        setTheme(order[(order.indexOf(cur)+1)%3]);
+      });
+    }
+    initThemeSwitch('themeSwitch'); initThemeSwitch('mThemeSwitch');
+    mq.addEventListener?.('change', ()=>{ if((localStorage.getItem('theme')||'system')==='system') applyTheme(); });
+    applyTheme();
 
-    // Language (kept minimal: same structure as your current script)
+    // === LANGUAGE (2 nấc) ===
     const strings = {
-      en: {'nav.about':'About','nav.skills':'Skills','nav.experience':'Experience','nav.projects':'Projects','nav.contact':'Contact',
-      'hero.tag':'Portfolio · System Monitoring & FTTx','hero.name':'Hoang Tran Phong (HTP8888)',
-      'hero.desc':'PTIT student passionate about system administration (Zabbix, Grafana) and XGS‑PON/FTTx research. Thesis: "Research on XGS‑PON and deployment solutions on OLT."',
-      'hero.projects':'View Projects','hero.cv':'📄 Download CV (PDF)'},
-      vi: {'nav.about':'Giới thiệu','nav.skills':'Kỹ năng','nav.experience':'Kinh nghiệm','nav.projects':'Dự án','nav.contact':'Liên hệ',
-      'hero.tag':'Portfolio · Giám sát hệ thống & FTTx','hero.name':'Hoàng Trần Phong (HTP8888)',
-      'hero.desc':'Sinh viên PTIT yêu thích quản trị hệ thống (Zabbix, Grafana) và nghiên cứu XGS‑PON/FTTx. Đồ án: "Nghiên cứu công nghệ XGS‑PON và giải pháp triển khai trên OLT".',
-      'hero.projects':'Xem Projects','hero.cv':'📄 Tải CV (PDF)'}
+      en:{'nav.about':'About','nav.skills':'Skills','nav.experience':'Experience','nav.projects':'Projects','nav.contact':'Contact',
+        'hero.tag':'Portfolio · System Monitoring & FTTx','hero.name':'Hoang Tran Phong (HTP8888)',
+        'hero.desc':'PTIT student passionate about system administration (Zabbix, Grafana) and XGS-PON/FTTx research. Thesis: "Research on XGS-PON and deployment solutions on OLT."',
+        'hero.projects':'View Projects','hero.cv':'📄 Download CV (PDF)',
+        'about.title':'About','about.body':'I focus on monitoring and networking: Grafana dashboards on Zabbix data, alert design, and scripting automation. Also research XGS-PON/FTTx with OLT/ONU/ONT, VLAN/IP planning, SNMP monitoring.',
+        'about.loc':'Hanoi, Vietnam','about.school':'PTIT — Internet Networks & Services','about.status':'Open to Internship','about.focus':'Focus',
+        'skills.title':'Skills','skills.monitor':'Monitoring & Tools','skills.programming':'Programming','skills.database':'Database',
+        'exp.title':'Experience & Education','proj.title':'Featured Projects','contact.title':'Contact','contact.blurb':'Let’s talk about labs, research collaboration, or internship opportunities.'},
+      vi:{'nav.about':'Giới thiệu','nav.skills':'Kỹ năng','nav.experience':'Kinh nghiệm','nav.projects':'Dự án','nav.contact':'Liên hệ',
+        'hero.tag':'Portfolio · Giám sát hệ thống & FTTx','hero.name':'Hoàng Trần Phong (HTP8888)',
+        'hero.desc':'Sinh viên PTIT yêu thích quản trị hệ thống (Zabbix, Grafana) và nghiên cứu XGS-PON/FTTx. Đồ án: "Nghiên cứu công nghệ XGS-PON và giải pháp triển khai trên OLT".',
+        'hero.projects':'Xem Projects','hero.cv':'📄 Tải CV (PDF)',
+        'about.title':'Giới thiệu','about.body':'Mình tập trung vào giám sát hệ thống & mạng: dựng dashboard Grafana từ dữ liệu Zabbix, thiết kế cảnh báo, tự động hoá bằng script. Đồng thời nghiên cứu XGS-PON/FTTx với OLT/ONU/ONT, quy hoạch VLAN/IP, giám sát SNMP.',
+        'about.loc':'Hà Nội, Việt Nam','about.school':'PTIT — Mạng & Dịch vụ Internet','about.status':'Sẵn sàng thực tập','about.focus':'Hướng quan tâm',
+        'skills.title':'Kỹ năng','skills.monitor':'Monitoring & Tools','skills.programming':'Lập trình','skills.database':'Cơ sở dữ liệu',
+        'exp.title':'Kinh nghiệm & Học tập','proj.title':'Dự án nổi bật','contact.title':'Liên hệ','contact.blurb':'Trao đổi về lab, hợp tác nghiên cứu hay cơ hội thực tập.'}
     };
-    const tEls = document.querySelectorAll('[data-i18n]');
     function setLang(lang){
-      if(lang==='en'){
-        tEls.forEach(el=>{ const k=el.getAttribute('data-i18n'); if(strings.en[k]) el.textContent=strings.en[k]; });
-        document.documentElement.lang='en';
-      } else {
-        location.hash='#vi'; location.reload();
-      }
+      localStorage.setItem('lang', lang);
+      const dict = strings[lang] || strings.vi;
+      document.documentElement.lang = (lang==='en'?'en':'vi');
+      document.querySelectorAll('[data-i18n]').forEach(el=>{
+        const k = el.getAttribute('data-i18n'); if(dict[k]) el.textContent = dict[k];
+      });
+      // ui
+      document.querySelectorAll('#langSwitch, #mLangSwitch').forEach(sw=>{
+        if(!sw) return;
+        sw.dataset.pos = (lang==='en'?1:0);
+        const btns = sw.querySelectorAll('button');
+        btns[0]?.classList.toggle('active', lang==='vi');
+        btns[1]?.classList.toggle('active', lang==='en');
+      });
     }
-    document.getElementById('langEn')?.addEventListener('click',()=>setLang('en'));
-    document.getElementById('langVi')?.addEventListener('click',()=>setLang('vi'));
-    document.getElementById('mLangEn')?.addEventListener('click',()=>setLang('en'));
-    document.getElementById('mLangVi')?.addEventListener('click',()=>setLang('vi'));
+    function initLangSwitch(id){
+      const sw = document.getElementById(id); if(!sw) return;
+      sw.addEventListener('click', e=>{
+        const btn = e.target.closest('button'); if(!btn) return;
+        setLang(btn.dataset.lang);
+      });
+    }
+    initLangSwitch('langSwitch'); initLangSwitch('mLangSwitch');
+    // init from storage
+    setLang(localStorage.getItem('lang')||'vi');
 
     // Mobile menu
     document.getElementById('menuBtn')?.addEventListener('click',()=>document.getElementById('mobileMenu').classList.toggle('hidden'));
-
-    // Footer year
+    // Year
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Bars animation
+    // Bars
     document.querySelectorAll('.bar[data-value]').forEach(el=>{
-      const val = Math.max(0, Math.min(1, parseFloat(el.getAttribute('data-value')||'0')));
-      el.style.transition = 'width 1000ms ease';
-      requestAnimationFrame(()=>{ el.style.width = (val*100).toFixed(0)+'%'; });
+      const v = Math.max(0, Math.min(1, parseFloat(el.dataset.value||'0')));
+      el.style.width = (v*100).toFixed(0)+'%';
     });
   </script>
 </body>
