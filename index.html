@@ -10,8 +10,6 @@
   <meta property="og:type" content="website" />
   <meta property="og:image" content="/assets/cover.png" />
   <link rel="icon" href="/assets/favicon.ico" />
-
-  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -39,34 +37,20 @@
   </style>
 </head>
 <body class="font-display bg-white text-slate-800">
-  <!-- Inline SVG Icon Sprite: replace external logo images -->
   <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
-    <!-- Zabbix: Z in a rounded square -->
     <symbol id="icon-zabbix" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="4" ry="4" fill="#D40000"/><path d="M6 16l5-8h-5v-2h10l-5 8h5v2H6z" fill="#fff"/></symbol>
-    <!-- Grafana: simple swirl/gear -->
     <symbol id="icon-grafana" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" fill="#FF9800"/><path d="M12 2l2 3-2 1-2-1 2-3zm8 10l-3 2-1-2 1-2 3 2zm-8 8l-2-3 2-1 2 1-2 3zM4 12l3-2 1 2-1 2-3-2z" fill="#F57C00"/></symbol>
-    <!-- pfSense: shield -->
     <symbol id="icon-pfsense" viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5.25-3.5 9.75-8 11-4.5-1.25-8-5.75-8-11V5l8-3z" fill="#1D57D9"/><path d="M8 11h8v2H8zM8 14h5v2H8z" fill="#fff"/></symbol>
-    <!-- EVE-NG: network nodes -->
     <symbol id="icon-eve" viewBox="0 0 24 24"><circle cx="6" cy="12" r="3" fill="#0B3A96"/><circle cx="18" cy="6" r="3" fill="#0B3A96"/><circle cx="18" cy="18" r="3" fill="#0B3A96"/><path d="M8.5 10.5l7-3M8.5 13.5l7 3" stroke="#0B3A96" stroke-width="2" fill="none"/></symbol>
-    <!-- OLT/XGS-PON: fiber line -->
     <symbol id="icon-olt" viewBox="0 0 24 24"><path d="M3 12h10" stroke="#072A6C" stroke-width="2"/><circle cx="16" cy="12" r="3" fill="#072A6C"/><path d="M19 12h2m-1-3v6" stroke="#072A6C" stroke-width="2"/></symbol>
-    <!-- C++ -->
     <symbol id="icon-cpp" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#00599C"/><path d="M10 8a4 4 0 100 8 4 4 0 100-8z" fill="#fff"/><path d="M14 9h2v2h-2V9zm0 4h2v2h-2v-2z" fill="#fff"/></symbol>
-    <!-- Java: cup -->
     <symbol id="icon-java" viewBox="0 0 24 24"><path d="M6 17h9a3 3 0 100-6H6v6z" fill="#1D57D9"/><path d="M15 11h2a2 2 0 110 4h-2" fill="none" stroke="#1D57D9" stroke-width="2"/><path d="M5 20h12" stroke="#1D57D9" stroke-width="2"/></symbol>
-    <!-- Python: two halves -->
     <symbol id="icon-python" viewBox="0 0 24 24"><path d="M12 3c3 0 3 2 3 4v2H9c-2 0-4 2-4 4V9c0-3 2-6 7-6z" fill="#3776AB"/><path d="M12 21c-3 0-3-2-3-4v-2h6c2 0 4-2 4-4v4c0 3-2 6-7 6z" fill="#FFD43B"/></symbol>
-    <!-- Linux: penguin simple -->
     <symbol id="icon-linux" viewBox="0 0 24 24"><path d="M12 3c2 0 3 2 3 3v2c2 1 3 3 3 5 0 4-3 6-6 6s-6-2-6-6c0-2 1-4 3-5V6c0-1 1-3 3-3z" fill="#000"/><circle cx="10" cy="8" r="1" fill="#fff"/><circle cx="14" cy="8" r="1" fill="#fff"/></symbol>
-    <!-- Git: branch -->
     <symbol id="icon-git" viewBox="0 0 24 24"><path d="M7 5a2 2 0 110 4 2 2 0 010-4zm0 10a2 2 0 110 4 2 2 0 010-4zm10-5a2 2 0 110 4 2 2 0 010-4z" fill="#F34F29"/><path d="M7 7v6m0 0c4 0 6-2 10-2" stroke="#F34F29" stroke-width="2"/></symbol>
-    <!-- SQL: database -->
     <symbol id="icon-sql" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="7" ry="3" fill="#08307D"/><path d="M5 5v10c0 1.7 3.1 3 7 3s7-1.3 7-3V5" fill="#08307D" opacity="0.8"/></symbol>
   </svg>
-    <!-- Wireshark: fin/dolphin shape -->
     <symbol id="icon-wireshark" viewBox="0 0 24 24"><path d="M3 19c4-10 14-14 18-14-5 3-9 8-9 14H3z" fill="#1679A7"/></symbol>
-  <!-- Top bar with language toggle -->
   <header class="sticky top-0 z-50 backdrop-blur bg-white/85 border-b brand-border">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
       <a href="#home" class="font-extrabold tracking-tight text-chelsea-700">HTP8888</a>
@@ -95,8 +79,6 @@
       </div>
     </div>
   </header>
-
-  <!-- HERO -->
   <section id="home" class="relative overflow-hidden">
     <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
       <div class="absolute -top-24 -right-40 w-[40rem] h-[40rem] bg-gradient-to-tr from-chelsea-300/30 via-chelsea-500/20 to-chelsea-300/30 blur-3xl rounded-full"></div>
@@ -128,8 +110,6 @@
       </div>
     </div>
   </section>
-
-  <!-- ABOUT -->
   <section id="about" class="py-16 sm:py-24 bg-white">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-8 items-start">
       <div>
@@ -155,17 +135,12 @@
       </div>
     </div>
   </section>
-
-  <!-- SKILLS -->
   <section id="skills" class="py-16 sm:py-24">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <h2 class="text-2xl sm:text-3xl font-bold text-chelsea-800" data-i18n="skills.title">Kỹ năng</h2>
-
-      <!-- Monitoring & Tools -->
       <div class="mt-8">
         <h3 class="text-sm font-semibold uppercase tracking-widest text-slate-500" data-i18n="skills.monitor">Monitoring & Tools</h3>
         <div class="mt-4 space-y-4">
-          <!-- Zabbix -->
           <div class="flex items-center gap-4 rounded-2xl border brand-border bg-white p-4">
             <svg class="h-6 w-6 text-chelsea-700"><use href="#icon-zabbix"/></svg>
             <span class="min-w-24 text-sm font-medium">Zabbix</span>
@@ -173,7 +148,6 @@
               <div class="bar h-full bg-chelsea-700 rounded-full" data-value="0.90" style="width:0"></div>
             </div>
           </div>
-          <!-- Grafana -->
           <div class="flex items-center gap-4 rounded-2xl border brand-border bg-white p-4">
             <svg class="h-6 w-6"><use href="#icon-grafana"/></svg>
             <span class="min-w-24 text-sm font-medium">Grafana</span>
@@ -181,7 +155,6 @@
               <div class="bar h-full bg-chelsea-700 rounded-full" data-value="0.85" style="width:0"></div>
             </div>
           </div>
-          <!-- EVE-NG -->
           <div class="flex items-center gap-4 rounded-2xl border brand-border bg-white p-4">
             <svg class="h-6 w-6 text-chelsea-700"><use href="#icon-eve"/></svg>
             <span class="min-w-24 text-sm font-medium">EVE‑NG</span>
@@ -189,7 +162,6 @@
               <div class="bar h-full bg-chelsea-700 rounded-full" data-value="0.78" style="width:0"></div>
             </div>
           </div>
-          <!-- XGS-PON / OLT -->
           <div class="flex items-center gap-4 rounded-2xl border brand-border bg-white p-4">
             <svg class="h-6 w-6 text-chelsea-700"><use href="#icon-olt"/></svg>
             <span class="min-w-24 text-sm font-medium">XGS‑PON / OLT</span>
@@ -197,7 +169,6 @@
               <div class="bar h-full bg-chelsea-700 rounded-full" data-value="0.82" style="width:0"></div>
             </div>
           </div>
-          <!-- Wireshark -->
           <div class="flex items-center gap-4 rounded-2xl border brand-border bg-white p-4">
             <svg class="h-6 w-6"><use href="#icon-wireshark"/></svg>
             <span class="min-w-24 text-sm font-medium">Wireshark</span>
@@ -207,8 +178,6 @@
           </div>
         </div>
       </div>
-
-      <!-- Programming -->
       <div class="mt-10">
         <h3 class="text-sm font-semibold uppercase tracking-widest text-slate-500" data-i18n="skills.programming">Programming</h3>
         <div class="mt-4 space-y-4">
@@ -235,8 +204,6 @@
           </div>
         </div>
       </div>
-
-      <!-- Database -->
       <div class="mt-10">
         <h3 class="text-sm font-semibold uppercase tracking-widest text-slate-500" data-i18n="skills.database">Database</h3>
         <div class="mt-4 space-y-4">
@@ -252,8 +219,6 @@
 
     </div>
   </section>
-
-  <!-- EXPERIENCE -->
   <section id="experience" class="py-16 sm:py-24 bg-slate-50">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <h2 class="text-2xl sm:text-3xl font-bold text-chelsea-800" data-i18n="exp.title">Kinh nghiệm & Học tập</h2>
@@ -275,8 +240,6 @@
       </div>
     </div>
   </section>
-
-  <!-- PROJECTS -->
   <section id="projects" class="py-16 sm:py-24">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="flex items-end justify-between gap-4">
@@ -311,8 +274,6 @@
       </div>
     </div>
   </section>
-
-  <!-- CONTACT -->
   <section id="contact" class="py-16 sm:py-24 bg-slate-50">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <h2 class="text-2xl sm:text-3xl font-bold text-chelsea-800" data-i18n="contact.title">Liên hệ</h2>
@@ -340,8 +301,6 @@
   <footer class="py-8 border-t brand-border text-center text-sm bg-white">
     <p>© <span id="year"></span> HTP8888 · Chelsea blue theme 💙</p>
   </footer>
-
-  <!-- Language pack & small JS -->
   <script>
     const strings = {
       en: {
@@ -372,31 +331,22 @@
         'skills.title':'Kỹ năng','skills.prog':'Lập trình','skills.infra':'Hạ tầng & Công cụ','skills.monitor':'Monitoring & Tools','skills.database':'Cơ sở dữ liệu','skills.programming':'Lập trình',
         'exp.title':'Kinh nghiệm & Học tập','exp.role1':'System Monitoring Labs','exp.role2':'PTIT — Điện tử & Viễn thông','exp.body2':'Đồ án: XGS‑PON & triển khai OLT (VLAN/IP, đồng tồn tại GPON, giám sát SNMP).',
         'proj.title':'Dự án nổi bật','proj.p1':'Tích hợp datasource, dashboard hệ thống, alert webhook.','proj.p2':'Mô hình OLT/ONU/ONT, VLAN/IP, đồng tồn tại GPON (ITU‑T).','proj.p3':'OpenVPN/SSL VPN, NAT 1:1/Port‑forward, rules & logs.',
-        'contact.title':'Liên hệ','contact.blurb':'Trao đổi về lab, hợp tác nghiên cứu hoặc cơ hội thực tập.'
+        'contact.title':'Liên hệ','contact.blurb':'Trao đổi về lab, hợp tác nghiên cứu.'
       }
     };
-
-    // Fill VI by reading current DOM text (already in VI). When switching EN, we swap to strings.en
     const tEls = document.querySelectorAll('[data-i18n]');
     function setLang(lang){
       if(lang==='en'){
         tEls.forEach(el=>{ const k=el.getAttribute('data-i18n'); if(strings.en[k]) el.textContent=strings.en[k]; });
         document.documentElement.lang='en';
       } else {
-        // reload VI text by refreshing from initial content via location hash trick
         location.hash = '#vi'; location.reload();
       }
     }
     document.getElementById('langEn').addEventListener('click',()=>setLang('en'));
     document.getElementById('langVi').addEventListener('click',()=>setLang('vi'));
-
-    // Mobile menu
     document.getElementById('menuBtn').addEventListener('click',()=>document.getElementById('mobileMenu').classList.toggle('hidden'));
-
-    // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Simple toast after submit (client-side)
     const form = document.getElementById('contactForm');
     const toast = document.getElementById('toast');
     form?.addEventListener('submit', ()=>{
@@ -406,7 +356,6 @@
     });
   </script>
   <script>
-    // Bar animation: set width from data-value with a smooth transition (numbers hidden)
     document.querySelectorAll('.bar[data-value]').forEach(el=>{
       const val = Math.max(0, Math.min(1, parseFloat(el.getAttribute('data-value')||'0')));
       el.style.transition = 'width 1000ms ease';
